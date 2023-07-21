@@ -4,4 +4,4 @@
 
 
 
-<center align="center"><img src="wordcloud.png" height="400px" width="800px"/></center>
+<img src="wordcloud.png" height="400px" width="800px" align="center"/>
