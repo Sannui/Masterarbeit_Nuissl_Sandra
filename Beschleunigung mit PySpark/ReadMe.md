@@ -4,10 +4,10 @@ PySpark wurde von den Entwicklern des Big-Data-Systems Apache Spark herausgebrac
 Im Rahmen dieser Masterarbeit wurde versucht die Prozesse der Textverarbeitung mithilfe von Pyspark zu beschleunigen. Es wurde zu Veranschaulichungszwecken der große Datensatz zu den Amazon Daten von "Sport and Outdoors" verwendet.
 Der gesammte Code ist in diese [Jupyter Notebook](Dataanalysis_and_Preperation_Pyspark.jpynb) zu finden.
 
-<center><img src="Beschleunigung.PNG" height="300px" width="1100px"/></center>
+<center><img src="Beschleunigung.PNG" height="300px" width="2100px"/></center>
 <p align="center">Vergleich der Beschleunigungen von PySpark gegenüber Joblib</p>
 
-Die Beschleunigung durch die Verwendung von PySpark ist, wie in der Abbildung zu sehen, beachtlich. Während das Laden ohne Beschleunigung und das Laden mit Parallelisierung durch Joblib nach über einer Stunde abgebrochen wurde, dauert der Ladevorgang mit der Implementierung von PySpark lediglich 35 Sekunden. Daraus ergibt sich eine Beschleunigung von mindesten 800-facher Geschwindigkeit. Trotz diese überragenden Ergebnisse konnte PySpark nicht weiter verwendet werden, da aufgrund der Limitierungen der externen Verwendung von PySpark (auserhalb von Databricks) bei dem Export und der Transformation des DataFrames zu einer Liste das "maximumPassResult" überschritten wurde. Dies kann bei einer lokalen Verwendung von PySpark leider nicht angepasst werden.
+Die Beschleunigung durch die Verwendung von PySpark ist, wie in der Abbildung zu sehen, beachtlich. Während das Laden ohne Beschleunigung nach über 1,5 Stunden abgebrochen wurde und die Parallelisierung durch Joblib ca. 1h lädt, dauert der Ladevorgang mit der Implementierung von PySpark lediglich 35 Sekunden. Daraus ergibt sich eine Beschleunigung von mindesten 800-facher Geschwindigkeit. Trotz diese überragenden Ergebnisse konnte PySpark nicht weiter verwendet werden, da aufgrund der Limitierungen der externen Verwendung von PySpark (auserhalb von Databricks) bei dem Export und der Transformation des DataFrames zu einer Liste das "maximumPassResult" überschritten wurde. Dies kann bei einer lokalen Verwendung von PySpark leider nicht angepasst werden.
 
 
 
