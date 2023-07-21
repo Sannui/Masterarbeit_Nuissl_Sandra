@@ -12,5 +12,6 @@ Nun kann die Library über den „pip install“ Befehl oder über das Terminal 
 # Import findspark
 import findspark
 findspark.init()
-´´´
+```
+
 Nach dem Erfolgreichen Abschluss aller Installationen und Imports, kann als nächstes eine Spark Session mit folgendem Befehl gestartet werden (Shah, 2018):
