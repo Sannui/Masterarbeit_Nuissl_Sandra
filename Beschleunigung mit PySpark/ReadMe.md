@@ -6,13 +6,11 @@ Um mit Apache Spark in Juyter Notebooks arbeiten zu können, muss die richtige V
 
 <center>Herunterladen von Spark 3.3.1 (Apache Spark, 2023)</center>
 
-
 Nun kann die Library über den „pip install“ Befehl oder über das Terminal installiert werden. In diesem Fall hat die Installation über das Terminal stattgefunden. Nach der erfolgreichen Installation von pyspark können die für die Beschleunigung des Ladevorgang benötigten Klassen importiert werden. Wichtig ist jedoch, dass zuvor „findspark“ importiert und initialisiert wurde, damit die benötigte Spark Instanz gewunden wird (Shah, 2018).
-
 
 ```
 # Import findspark
 import findspark
 findspark.init()
 ´´´
-
+Nach dem Erfolgreichen Abschluss aller Installationen und Imports, kann als nächstes eine Spark Session mit folgendem Befehl gestartet werden (Shah, 2018):
