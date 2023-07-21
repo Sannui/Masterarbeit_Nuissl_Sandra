@@ -7,6 +7,7 @@ Der gesammte Code ist in diese [Jupyter Notebook](Dataanalysis_and_Preperation_P
 Die Beschleunigung durch die Verwendung von PySpark ist beachtlich. Während das Laden ohne Beschleunigung und das Laden mit Parallelisierung durch Joblib nach über einer Stunde abgebrochen wurde, dauert der Ladevorgang mit der Implementierung von PySpark lediglich 35 Sekunden. Daraus ergibt sich eine Beschleunigung von mindesten 800-facher Geschwindigkeit. Trotz diese überragenden Ergebnisse konnte PySpark nicht weiter verwendet werden, da aufgrund der Limitierungen der externen Verwendung von PySpark (auserhalb von Databricks) bei dem Export und der Transformation des DataFrames zu einer Liste das "maximumPassResult" überschritten wurde. Dies kann bei einer lokalen Verwendung von PySpark leider nicht angepasst werden.
 
 
+
 ## Implementierung in Jupyter Notebook
 
 Um mit Apache Spark in Juyter Notebooks arbeiten zu können, muss die richtige Version zuerst heruntergeladen werden. Hierfür kann auf der Webside von [Apache Spark](https://spark.apache.org/downloads.html) die richtige Version heruntergeladen werden. In Abbildung sechs sind die notwendigen Konfigurationen ersichtlich (Apache Spark, 2023).
@@ -50,6 +51,8 @@ Spark Session gestartet
         AppName	pyspark-shell
 ```
 
+
+
 ## Laden der Daten mithilfe von PySpark
 
 Der Datensatz lässt sich nun mit der unten stehenden Funktion in einen Data Frame laden. Die Methode „format“ dient dazu die Quelle der Daten weiter zu spezifizieren. (SparkBy{Examples}, 2020). Beispielhaft wurde auch hier der Datensatz zur Sport und Outdoorbekleidung gewählt.
@@ -64,6 +67,8 @@ Um diesen Fehler zu umgehen, kann die Spark Session konfiguriert werden, indem d
 # Konfiguration "Case Sensitive" zur Normalisierung
 spark.conf.set("spark.sql.caseSensitive", "true")
 ```
+
+
 
 ## Literatur
 
