@@ -3,7 +3,7 @@
 
 
 <p align="center">
-  <img width="460" height="300" src="wordcloud.png">
+  <img width="800" height="400" src="wordcloud.png">
 </p>
 
 
