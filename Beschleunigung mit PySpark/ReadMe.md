@@ -17,7 +17,19 @@ findspark.init()
 import pyspark
 from pyspark.sql import SparkSession
 ```
-
-
-
 Nach dem Erfolgreichen Abschluss aller Installationen und Imports, kann als nächstes eine Spark Session mit folgendem Befehl gestartet werden (Shah, 2018):
+
+```
+# Spark Session starten
+spark = SparkSession.builder.getOrCreate()
+```
+
+Bei einem ersten Versuch die Spark Session zu starten kam es im Rahmen dieser Masterarbeit jedoch zu folgender Fehlermeldung:
+
+<u>RuntimeError: </u>
+Java gateway process exited before sending its port number
+
+Um diese Fehlermeldung zu beheben, war es erforderlich Java (JDK) zu installieren. Benötigt wird die Version 8, damit Python in der Lage ist mit der Virtuellen Maschine von Java zu kommunizieren (Preusler, 2020). Für den Download kann direkt die Website von Java aufgerufen werden (Oracle, 2023).
+Nach dem Download befindet sich die Datei „JavaSetup8u351.exe“ im Download Ordner. Diese muss lediglich in den aktuellen Arbeitsordner kopiert werden. Es ist wichtig, dass sich die Downloads von Spark und Java in dem gleichen Ordner befinden, in welchem das Jupyter Notebook abgelegt ist, damit das Coding fehlerfrei läuft. Nach den genannten Korrekturen konnte die Spark Session erfolgreich gestartet werden:
+
+
