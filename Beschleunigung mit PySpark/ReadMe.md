@@ -4,7 +4,7 @@ PySpark wurde von den Entwicklern des Big-Data-Systems Apache Spark herausgebrac
 Im Rahmen dieser Masterarbeit wurde versucht die Prozesse der Textverarbeitung mithilfe von Pyspark zu beschleunigen. Es wurde zu Veranschaulichungszwecken der große Datensatz zu den Amazon Daten von "Sport and Outdoors" verwendet.
 Der gesammte Code ist in diese [Jupyter Notebook](Dataanalysis_and_Preperation_Pyspark.jpynb) zu finden.
 
-Die Beschleunigung durch die Verwendung von PySpark ist beachtlich. Während das Laden ohne Beschleunigung und das Laden mit Parallelisierung durch Joblib nach über einer Stunde abgebrochen wurde, dauert der Ladevorgang mit der Implementierung von PySpark lediglich 32,2 Sekunden. Daraus ergibt sich eine Beschleunigung von mindesten 800-facher Geschwindigkeit.
+Die Beschleunigung durch die Verwendung von PySpark ist beachtlich. Während das Laden ohne Beschleunigung und das Laden mit Parallelisierung durch Joblib nach über einer Stunde abgebrochen wurde, dauert der Ladevorgang mit der Implementierung von PySpark lediglich 35 Sekunden. Daraus ergibt sich eine Beschleunigung von mindesten 800-facher Geschwindigkeit. Trotz diese überragenden Ergebnisse konnte PySpark nicht weiter verwendet werden, da aufgrund der Limitierungen der externen Verwendung von PySpark (auserhalb von Databricks) bei dem Export und der Transformation des DataFrames zu einer Liste das "maximumPassResult" überschritten wurde. Dies kann bei einer lokalen Verwendung von PySpark leider nicht angepasst werden.
 
 
 ## Implementierung in Jupyter Notebook
@@ -35,21 +35,22 @@ spark = SparkSession.builder.getOrCreate()
 
 Bei einem ersten Versuch die Spark Session zu starten kam es im Rahmen dieser Masterarbeit jedoch zu folgender Fehlermeldung:
 
-<u>RuntimeError:</u>
-Java gateway process exited before sending its port number
+ > <u>RuntimeError:</u> Java gateway process exited before sending its port number
 
 Um diese Fehlermeldung zu beheben, war es erforderlich Java (JDK) zu installieren. Benötigt wird die Version 8, damit Python in der Lage ist mit der Virtuellen Maschine von Java zu kommunizieren (Preusler, 2020). Der [Java Download (JDK)](https://www.java.com/download/ie_manual.jsp) kann direkt über die Website von Oracle abgerufen werden (Oracle, 2023).
 
 Nach dem Download befindet sich die Datei „JavaSetup8u351.exe“ im Download Ordner. Diese muss lediglich in den aktuellen Arbeitsordner kopiert werden. Es ist wichtig, dass sich die Downloads von Spark und Java in dem gleichen Ordner befinden, in welchem das Jupyter Notebook abgelegt ist, damit das Coding fehlerfrei läuft. Nach den genannten Korrekturen konnte die Spark Session erfolgreich gestartet werden:
 ```
-# Spark Session gestartet
-SparkSession - in-memory
-SparkContext
-Spark UI
-Version	v3.3.1
-Master	local[*]
-AppName	pyspark-shell
+Spark Session gestartet
+        SparkSession - in-memory
+        SparkContext
+        Spark UI
+        Version	v3.3.1
+        Master	local[*]
+        AppName	pyspark-shell
 ```
+
+## Laden der Daten mithilfe von PySpark
 
 Der Datensatz lässt sich nun mit der unten stehenden Funktion in einen Data Frame laden. Die Methode „format“ dient dazu die Quelle der Daten weiter zu spezifizieren. (SparkBy{Examples}, 2020). Beispielhaft wurde auch hier der Datensatz zur Sport und Outdoorbekleidung gewählt.
 ```
@@ -59,8 +60,27 @@ df = spark.read.format('org.apache.spark.sql.json') \
 ```
 Während der Masterarbeit kahm es hier zu einer weiteren Fehlermeldung, da Duplikate in den Spaltennamen vorhanden sind. Dies ist der Fall, da mehrere Spalten mit dem Wort „style“ beginnen.
 Um diesen Fehler zu umgehen, kann die Spark Session konfiguriert werden, indem die Berücksichtigung der Groß- und Kleinschreibung aktiviert wird (shoeboxer, 2015):
-
 ```
 # Konfiguration "Case Sensitive" zur Normalisierung
 spark.conf.set("spark.sql.caseSensitive", "true")
 ```
+
+## Literatur
+
+Apache Spark. (17. 02 2023). Download Apache Spark™. Abgerufen am 20. 02 2023 von spark.apache.org: https://spark.apache.org/downloads.html
+
+Oracle. (17. 01 2023). Download Java for Windows. Abgerufen am 20. 02 2023 von java.com: https://www.java.com/download/ie_manual.jsp
+
+Preusler, S. (13. 03 2020). Pyspark und Jupyter Notebook Anleitung für Windows. Abgerufen am 14. 01 2023 von https://medium.com/@stefan.preusler/pyspark-und-jupyter-notebook-anleitung-f%C3%BCr-windows-7317f2c968c4
+
+shoeboxer. (2015, 11 20). Duplicate columns in Spark Dataframe. Retrieved 02 20, 2023, from stackoverflow.com: https://stackoverflow.com/questions/33816481/duplicate-columns-in-spark-dataframe
+
+Shah, A., 2018. How to setup Apache Spark(PySpark) on Jupyter/IPython Notebook?. [Online] 
+Available at: https://medium.com/@ashish1512/how-to-setup-apache-spark-pyspark-on-jupyter-ipython-notebook-3330543ab307
+[Accessed 14 01 2023].
+
+Sarkar, T. (12. 11 2018). How to set up PySpark for your Jupyter notebook. Abgerufen am 14. 01 2023 von opensource.com: https://opensource.com/article/18/11/pyspark-jupyter-notebook
+
+SparkBy{Examples}. (06. 12 2020). PySpark Liest JSON-Datei in DataFrame. Abgerufen am 14. 01 2023 von https://sparkbyexamples.com/pyspark/pyspark-read-json-file-into-dataframe/#read-json-multiline
+
+Wuttke, L. (2022). Einführung in Apache Spark: Komponenten, Vorteile und Anwendungsbereiche. Abgerufen am 05. 01 2023 von datasolut.com: https://datasolut.com/was-ist-spark/#was-ist-pyspark
