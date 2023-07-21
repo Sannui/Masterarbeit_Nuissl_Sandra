@@ -2,6 +2,8 @@
 <hr>
 
 
+<p align="center">
+  <img width="460" height="300" src="wordcloud.png">
+</p>
 
 
-<img src="wordcloud.png" height="400px" width="800px" align="center"/>
