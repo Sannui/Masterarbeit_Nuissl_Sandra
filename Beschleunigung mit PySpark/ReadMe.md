@@ -9,7 +9,7 @@ Die Beschleunigung durch die Verwendung von PySpark ist beachtlich. Während das
 
 ## Implementierung in Jupyter Notebook
 
-Um mit Apache Spark in Juyter Notebooks arbeiten zu können, muss die richtige Version zuerst heruntergeladen werden. Hierfür kann auf der Webside von Apache Spark die richtige Version heruntergeladen werden. In Abbildung sechs sind die notwendigen Konfigurationen ersichtlich (Apache Spark, 2023).
+Um mit Apache Spark in Juyter Notebooks arbeiten zu können, muss die richtige Version zuerst heruntergeladen werden. Hierfür kann auf der Webside von [Apache Spark](https://spark.apache.org/downloads.html) die richtige Version heruntergeladen werden. In Abbildung sechs sind die notwendigen Konfigurationen ersichtlich (Apache Spark, 2023).
 
 <center><img src="Apache_Download.png" height="300px" width="1100px"/></center>
 <p align="center">Herunterladen von Spark 3.3.1 (Apache Spark, 2023)</p>
