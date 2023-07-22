@@ -8,3 +8,25 @@ Im Rahmen dieses Notebooks wurde eine Analyse der aufbereiteten [Review und Meta
 </p>
 
 
+## Aufbau der Analyse
+
+Die Analyse der Daten Gliedert sich in in drei Kategorien:
+<ul>4. Analyse der Review Daten</ul>
+    <ul>
+     <ul>4.1. Allgemeiner Überblick</ul>
+     <ul>4.2. Analyse einzelner Spalten</ul>
+        <ul>
+         <ul>4.2.1. reviewText</ul>
+         <ul>4.2.2. unixReviewTime</ul>
+         <ul>4.2.3. overall</ul>
+         <ul>4.2.4. asin</ul>
+        </ul>
+    </ul>
+<ul>5. Analyse der Meta Daten</ul>
+    <ul>
+     <ul>5.1. Allgemeiner Überblick</ul>
+     <ul>5.2. Analyse einzelner Spalten</ul>
+        <ul>
+         <ul>5.2.1. title</ul>
+         <ul>5.2.2. brand</ul>
+        </ul>
