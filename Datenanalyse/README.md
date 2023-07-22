@@ -38,7 +38,8 @@ Neben dem ersten strukturellen und inhaltlichen Analyse der beiden Datensätze w
 <Br>
 
 ## Hinweis zum Notebook
-__Glitly__
+### Glitly
+
 Dieses Jupyter Notebook enthält Plotly Graphiken. Da diese in Github normalerweise aufgrund der statistischen Viewer nicht angezeigt werden können, wurde der Code mithilfe der Library [Gitly](https://github.com/Tiagoeem/gitly) in einem statistischen Format gerendert. Hierfür muss eine bestimmte Version von Plotly sowie glitly installiert werden:
 
 ```
