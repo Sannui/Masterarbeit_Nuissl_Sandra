@@ -79,7 +79,7 @@ Die letzte Analyse des Notebooks befasst sich mit der Anzahl der Reviews in Bezu
 
 <Br>
 
-Gif
+Gif ![](name-of-giphy.gif)
 
 <Br>
 
