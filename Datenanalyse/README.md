@@ -38,6 +38,7 @@ Neben dem ersten strukturellen und inhaltlichen Analyse der beiden Datensätze w
 <Br>
 
 ## Hinweis zum Notebook
+__Glitly__
 Dieses Jupyter Notebook enthält Plotly Graphiken. Da diese in Github normalerweise aufgrund der statistischen Viewer nicht angezeigt werden können, wurde der Code mithilfe der Library [Gitly](https://github.com/Tiagoeem/gitly) in einem statistischen Format gerendert. Hierfür muss eine bestimmte Version von Plotly sowie glitly installiert werden:
 
 ```
@@ -52,8 +53,8 @@ from gitly.colab.plot import GitlyPlotter
 
 # Instanziierung des Objekts
 gitly = GitlyPlotter('github')
-
 ```
+
 Nun können alle Plotlygraphiken auch in GitHub angezeigt werden, indem die Ausgabe der Diagramme angepasst wird:
 
 ```
@@ -66,10 +67,17 @@ Um wieder auf eine dynamische Darstellung zu wechseln, muss das Objekt mithilfe 
 ```
 # Instanziierung des Objekts
 gitly = GitlyPlotter('colab')
-
 ```
 
+<Br>
+__Jupyter Dash__
+Eine weitere Library, welche zur Visualisierung der Outputs herangezogen wurde, ist Dash.
+Die letzte Analyse des Notebooks befasst sich mit der Anzahl der Reviews in Bezug auf die Marke und Produkte. Mithilfe des DropDown Menus lassen sich die Top 20 am häufigsten Bewerteten Marken auswählen und die Anzahl der Produkte ermitteln auf welche sich die Anzahl der Reviews bezieht.
+
+<Br>
+Gif
+<Br>
 
 
-
+Diese Darstellungsform ist ebenfalls im Rahmen von Github nicht möglich. Um auf das interaktive Inline Dashboard zuzugreifen, kann das Notebook herauntergeladen und entweder in Google Colab Pro oder einem lokalen Editor, wie beispielsweise VS Code ausgeführt werden. 
 
