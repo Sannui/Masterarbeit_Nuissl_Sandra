@@ -59,9 +59,10 @@ Nun können alle Plotlygraphiken auch in GitHub angezeigt werden, indem die Ausg
 ```
 fig = px.bar(df, x="column_1", y="column_2")
 gitly.show(fig)
-´´´
+```
 
 Um wieder auf eine dynamische Darstellung zu wechseln, muss das Objekt mithilfe des Parameters "colab" neu instanziiert werden. Wichtig hierbei zu beachten ist, dass diese Library speziell für Colab entwickelt wurde und auch nur in diesem Framework verwendet werden kann. Wird das Notebook in einem anderen Editor ausgeführt, kann glitly gelöscht werden und die Ausgabe der Graphiken erfolgt wie gewohnt über die übelichen Befehle von Plotly.
+
 ```
 # Instanziierung des Objekts
 gitly = GitlyPlotter('colab')
