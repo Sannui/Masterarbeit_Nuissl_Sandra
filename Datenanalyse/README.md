@@ -72,6 +72,7 @@ gitly = GitlyPlotter('colab')
 
 <Br>
 ### Jupyter Dash
+
 Eine weitere Library, welche zur Visualisierung der Outputs herangezogen wurde, ist Dash.
 Die letzte Analyse des Notebooks befasst sich mit der Anzahl der Reviews in Bezug auf die Marke und Produkte. Mithilfe des DropDown Menus lassen sich die Top 20 am häufigsten Bewerteten Marken auswählen und die Anzahl der Produkte ermitteln auf welche sich die Anzahl der Reviews bezieht.
 
