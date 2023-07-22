@@ -71,6 +71,7 @@ gitly = GitlyPlotter('colab')
 ```
 
 <Br>
+
 ### Jupyter Dash
 
 Eine weitere Library, welche zur Visualisierung der Outputs herangezogen wurde, ist Dash.
