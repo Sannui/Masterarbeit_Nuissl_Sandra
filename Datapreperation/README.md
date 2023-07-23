@@ -6,8 +6,6 @@ Dieses Notebook umfasst die Datenvorverarbeitung der Textdaten, da die Topic Mod
 <p align="center"><img src="img/Cleaned_Data.PNG" height="500px" width="1000px"/></p>
 <p align="center>Fertig bereinigter Datensatz</p>
 
-<Br>
-
 Die Preparation gliedert sich in zwei Kathegorien, die allgemeinen Bereinigungsschritte und die Bereinigung der Textdaten:
 
 <ul>1. Allgemeine Datenbereinigung</ul>
@@ -28,7 +26,6 @@ Die Preparation gliedert sich in zwei Kathegorien, die allgemeinen Bereinigungss
      <ul>2.7. Entfernung von nicht ASCII konformen Wörtern</ul>
     </ul>
 
-<Br>
 
 ## Wichtigste Schritte der Datapreparation
 Die Implementierung der Bereinigungsschritte sind dem Jupyter Notebook zu entnehmen. Im folgenden sind die wichtigsten Funktionen zusammengefasst. Diese lassen sich auf unterschiedliche weiße in eine Pipeline integrieren. Im Rahmen dieser Masterarbeit wurden sie mithilfe einer For-Schleife und der Beschleunigung durch Joblib durchgeführt. Die Beschleunigung zeigte bei dem verkleinerten Datensatz zu ["Sports and Outdoors"](https://nijianmo.github.io/amazon/index.html) mit über 2 Mio. Zeilen gute Ergebnisse. Bei der Verarbeitung größerer Textmengen erhöhen sich Laufzeit rapiede. Aus diesem Grund lohnt sich die Implementierung mit PySpark, welche [hier](https://github.com/Sannui/Masterarbeit_Nuissl_Sandra/tree/main/Beschleunigung%20mit%20PySpark) beschrieben wurde.
