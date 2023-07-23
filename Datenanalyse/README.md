@@ -6,6 +6,8 @@ Im Rahmen dieses Notebooks wurde eine Analyse der aufbereiteten [Review und Meta
 <p align="center">
   <img width="800" height="400" src="wordcloud.png">
 </p>
+<p align="center">Wordkloud zu Datensatz "Sport and Outdoors"</p>
+
 <Br>
 
 
@@ -80,6 +82,7 @@ Die letzte Analyse des Notebooks befasst sich mit der Anzahl der Reviews in Bezu
 <Br>
 
 ![Dropdown](Dropdown_animation.gif)
+<p align="center">Dropdown zur Analyse der Produkte und Reviews pro Marke</p>
 
 <Br>
 
