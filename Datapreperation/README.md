@@ -35,7 +35,9 @@ Die Preparation gliedert sich in zwei Kathegorien, die allgemeinen Bereinigungss
 
 
 <Br>
+
 #### Lowercasing
+
 Das Lowercasing beschäftigt sich mit der Groß- und Kleinschreibung in TExten. Da es für das Verständnis eines Textes bzw. der Wörter keiner Groß- und Kleinschreibung bedarf, kann der Datensatz in diesem Punkt vereinheitlicht werden(Pomer, 2022). 
 
 ```
@@ -46,6 +48,7 @@ def to_lower(in_string):
 ```
 
 <Br>
+
 #### Lemmatisierung
 
 ```
