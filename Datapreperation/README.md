@@ -31,12 +31,12 @@ Die Preparation gliedert sich in zwei Kathegorien, die allgemeinen Bereinigungss
 <Br>
 
 ## Wichtigste Schritte der Datapreparation
-
+Die Implementierung der Bereinigungsschritte sind dem Jupyter Notebook zu entnehmen. Im folgenden sind die wichtigsten Funktionen zusammengefasst. Diese lassen sich auf unterschiedliche weiße in eine Pipeline integrieren. Im Rahmen dieser Masterarbeit wurden sie mithilfe einer For-Schleife und der Beschleunigung durch Joblib durchgeführt. Die Beschleunigung zeigte bei dem verkleinerten Datensatz zu "Sports and Outdoors" mit über 2 Mio. Zeilen gute Ergebnisse.
 
 
 <Br>
 
-#### Lowercasing
+### Lowercasing
 
 Das Lowercasing beschäftigt sich mit der Groß- und Kleinschreibung in TExten. Da es für das Verständnis eines Textes bzw. der Wörter keiner Groß- und Kleinschreibung bedarf, kann der Datensatz in diesem Punkt vereinheitlicht werden(Pomer, 2022). 
 
@@ -49,7 +49,7 @@ def to_lower(in_string):
 
 <Br>
 
-#### Lemmatisierung
+### Lemmatisierung
 
 ```
 # Überführen der Wörter in ihre Grundform
@@ -78,29 +78,24 @@ def lemmatize(in_string):
 
 
 <Br>
-#### Stemming
+
+### Stemming
 
 ```
 
 ```
 
 <Br>
-#### Entfernung von Satzzeichen
+
+### Entfernung von Satzzeichen
 
 ```
 
 ```
 
 <Br>
-#### Entfernung von Stopwords
 
-```
-
-```
-
-
-<Br>
-#### Entfernung von Zahlen
+### Entfernung von Stopwords
 
 ```
 
@@ -108,7 +103,17 @@ def lemmatize(in_string):
 
 
 <Br>
-#### Entfernung von nicht ASCII konformen Wörtern
+
+### Entfernung von Zahlen
+
+```
+
+```
+
+
+<Br>
+
+### Entfernung von nicht ASCII konformen Wörtern
 
 ```
 
