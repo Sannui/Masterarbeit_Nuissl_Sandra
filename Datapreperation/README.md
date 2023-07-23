@@ -110,9 +110,8 @@ def stemming(in_string):
 
 ### Entfernung von Satzzeichen
 
-Ein weiterer Schritt der Datenbereinigung bei Textdaten ist die Entfernung von Satzzeichen. Hier ist zu beachten, dass diese nicht ohne Weiteres entfernt werden können. Auf der einen Seite gibt es eine Reihe von Zeichen wie Klammern oder Punkte, welche den Inhalt und Kontext eines Datensatzes nicht maßgeblich beeinträchtigen. Daher lassen sich diese ohne Weiteres entfernen. Anders verhält es sich jedoch bei Kommata und Fragezeichen. Hierbei beeinflusst das Satzzeichen den Inhalt und kann daher die Analyse verfälschen. Sind im Datensatz viele Zahlen vorhanden, müssen die Kommata genauer untersucht werden, um zu vermeiden, dass aus einem Geldwert von 19,98 plötzlich das Jahr 1998 wird. Beide Zahlen hätten bei der Entfernung des Kommas den gleichen Wert und keine Aussagekraft (Pomer, 2022). Aus diesem Grund soll im Folgenden mit diesem Wissen im Hinterkopf eine Bereinigung der Satzzeichen stattfinden. Treten bei dem Ergebnis der Analyse vermehrt Zahlen oder andere Unstimmigkeiten auf, müssen die Satzzeichen ggf. in die Modelle miteinbezogen werden.
-
-` !"#$%&\'()*+,-./:;<=>?@[\\]^_{|}~ `
+Satzzeichen beeiflussen den Inhalt des Textes für Topic Modelling Analysen nicht maßgeblich und können aus diesem Grund ebenfalls aus dem Datensatz entfernt werden. Im Rahmen dieser Masterarbeit wurden diese Reihe von Zeichen entfernt: ` !"#$%&\'()*+,-./:;<=>?@[\\]^_{|}~ `
+Wichtig zu beachten ist jedoch die Kommasetzung bei Zahlen, um zu vermeiden deren Aussagekraft zu beeinträchgiten. So spielt das Komma beispielsweise bei 19,98€ und dem Jahr 1998 eine entscheidende Rolle (Pomer, 2022). Da aber zu einem späteren Zeitpunkt die Zahlen ebenfalls entfernt werden, kann diese Gegebenheit außer Acht gelassen werden.
 
 ```
 def punctation(in_string):
@@ -127,24 +126,53 @@ def punctation(in_string):
 
 ### Entfernung von Stopwords
 
-Stoppwörter sind Wörter, welche sehr häufig in einem Text auftreten und einen Einfluss auf die Grammatik eines Satzes haben (Pomer, 2022), für gewöhnlich diesem jedoch keine Bedeutung verleihen. Aus diesem Grund können Stoppwörter für eine Topic Modelling Analyse herausgefiltert werden, ohne dass der Kontext verändert wird. Auf diesen Weg lässt sich der Textkorpus um unerwünschte Wörter reduzieren, welche keinerlei Informationen für die Topic Modelling Modelle liefern. Des Weiteren lässt sich durch die Reduktion, die Trainingszeit des Modells reduzieren und die Clustering Genauigkeit steigern. Es ist jedoch zu beachten, dass die Auswahl der zu entfernenden Stopwords mit Bedacht getroffen werden muss, da beispielsweise eine Negation eine entscheidende Information liefert und bei dessen Entfernung den Sinn des Satzes verfälschen würde (Teja, 2020). Für jede Sprache existieren unterschiedliche Stoppwörter. Um diese aus den Daten herauszufiltern werden sogenannte Stopwordlisten herangezogen (Pomer, 2022).
+Stoppwörter sind Wörter, welche sehr häufig in einem Text auftreten und einen Einfluss auf die Grammatik eines Satzes haben (Pomer, 2022), für gewöhnlich diesem jedoch keine Bedeutung verleihen. Aus diesem Grund können Stoppwörter für eine Topic Modelling Analyse herausgefiltert werden, ohne dass der Kontext verändert wird. Auf diesen Weg lässt sich der Textkorpus um unerwünschte Wörter reduzieren, welche keinerlei Informationen für die Topic Modelling Modelle liefern. Es ist jedoch zu beachten, dass die Auswahl der zu entfernenden Stopwords mit Bedacht getroffen werden muss, da beispielsweise eine Negation eine entscheidende Information liefert und bei dessen Entfernung den Sinn des Satzes verfälschen würde (Teja, 2020).
 
 ```
+# Entfernung der Stopwords
+def remove_stops(in_string):
+    # Definition der notwendigen Parameter
+    list_pos = 0                                  # Zuordnung einer Positionsnummer
+    cleaned_str = ''                              # Leerer String für bereinigte Wörter
+    text_token = nltk.word_tokenize(in_string)    # Tokenisieren der Sätze in einzelne Strings
+    stop_words = stopwords.words('english')       # Bestimmen der Stopwords (für Englisch)
 
+    # Durchfürhung der Entfernung der Stopwords und Zusammenführung der Ergebnisse in einen String
+    for word in text_token:
+        if word not in stop_words:
+          stop = word
+        else:
+          stop = ""
+        if list_pos == 0:
+            cleaned_str = stop
+        else:
+            cleaned_str = cleaned_str + ' ' + stop
+        list_pos += 1
+
+    return cleaned_str
 ```
 
+<p align="left"><img src="Stopwords_time.PNG" height="50px" width="800px"/></p>
 
 <Br>
 
 
 ### Entfernung von Zahlen
 
-Wie bei jeder Bereinigung im Rahmen der Data Preperation muss eine Abwägung stattfinden, ob der Anwendungsfall die Informationen benötigt oder ob der Datensatz verringert werden kann (Pomer, 2022). Im Fall des Amazondatensatzes werden die Zahlen aus dem Text entnommen, da die Annahme getroffen wird, dass die Nummern nicht die Zuordnung in Kategorien unterstützen. Zur Entfernung der Nummern wird eine Funktion definiert, welche zuerst mithilfe der Library „Regular expression“ die Nummern in der Variable „num_re“ speichert (Python Software Foundation, 2023). Diese werden dann iterativ mit dem Satz abgeglichen und durch nichts ersetzt, falls es zu einer Übereinstimmung kommt (Pomer, 2022).
+Im Fall des Amazondatensatzes werden die Zahlen aus dem Text entnommen, da die Annahme getroffen wird, dass die Nummern nicht die Zuordnung in Cluster maßgeblich unterstützen.
 
 ```
+# Entfernung der Zahlen
+def remove_numbers(in_string):
+    # Kompilieren der Zahlen 0-9 in ein Ausdrucksmuster
+    num_re = re.compile('(\\d+)')
 
+    # Ersetzen der Zahlen durch "nichts"
+    cleaned_str = " ".join((re.sub(num_re, "", in_string)).split())
+    return cleaned_str
 ```
 
+<p align="left"><img src="Zahlen_time.PNG" height="50px" width="800px"/></p>
 
 <Br>
 
@@ -154,6 +182,14 @@ Wie bei jeder Bereinigung im Rahmen der Data Preperation muss eine Abwägung sta
 ASCII ist die Abkürzung für „American Standard Code for Information Interchange“ und es ist hierunter eine standardisierte Darstellungsform zu verstehen, mit welcher sich Zeichen durch ein elektronisches Gerät darstellen lassen. Über einen siebenstelligen Binärcode aus Einsen und Nullen lässt sich jedes dieser Zeichen erzeugen (IONOS SE, 2022). Da es sich hierbei um einen rein amerikanischen Standard handelt, werden Umlaute wie „ä, ö, ü“ oder weitere Sonderbuchstaben wie „ß“ oder „é, á“ nicht berücksichtigt. Würde der Datensatz beispielsweise deutsche Sätze enthalten, ist es wichtig, diese Umlaute zu normalisieren, da diese sonst einfach aus dem Datensatz gelöscht werden und die Bedeutung der Wörter verfälscht (Pomer, 2022). Da der Amazondatensatz, wie sich aus der Analyse ergab, lediglich englische Texte enthält, kann im Rahmen dieser Masterarbeit auf eine Bereinigung der Umlaute verzichtet werden, ohne dass die Modelle an Aussagekraft einbüßen. Zur Bereinigung von ASCII-Zeichen, wird folgende Formel definiert.
 
 ```
-
+Entfernung nicht ASCII konformer Wörter
+def remove_non_ascii_words(in_string):
+    # Returns the string without non ASCII characters
+    cleaned_str = ''.join(word for word in in_string if 0 < ord(word) < 128)
+    return cleaned_str
 ```
+
+<p align="left"><img src="ASCII_time.PNG" height="50px" width="800px"/></p>
+
+<Br>
 
