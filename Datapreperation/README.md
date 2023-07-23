@@ -8,8 +8,6 @@ Dieses Notebook umfasst die Datenvorverarbeitung der Textdaten, da die Topic Mod
 
 <Br>
 
-
-
 Die Preparation gliedert sich in zwei Kathegorien, die allgemeinen Bereinigungsschritte und die Bereinigung der Textdaten:
 
 <ul>1. Allgemeine Datenbereinigung</ul>
