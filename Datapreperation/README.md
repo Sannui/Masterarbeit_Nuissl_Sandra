@@ -3,7 +3,8 @@ Dieses Notebook umfasst die Datenvorverarbeitung der Textdaten, da die Topic Mod
 
 <Br>
 
-### Bild
+<p align="left"><img src="img/Cleaned_data.PNG" height="200px" width="900px"/></p>
+<p align="center>Fertig bereinigter Datensatz</p>
 
 <Br>
 
@@ -81,7 +82,7 @@ def lemmatize(in_string):
     return cleaned_str
 ```
 
-<p align="left"><img src="Lemmatisierung_time.PNG" height="50px" width="800px"/></p>
+<p align="left"><img src="img/Lemmatisierung_time.PNG" height="50px" width="800px"/></p>
 
 <Br>
 
@@ -103,7 +104,7 @@ def stemming(in_string):
     return cleaned_str
 ```
 
-<p align="left"><img src="Stemming_time.PNG" height="50px" width="800px"/></p>
+<p align="left"><img src="img/Stemming_time.PNG" height="50px" width="800px"/></p>
 
 <Br>
 
@@ -152,7 +153,7 @@ def remove_stops(in_string):
     return cleaned_str
 ```
 
-<p align="left"><img src="Stopwords_time.PNG" height="50px" width="800px"/></p>
+<p align="left"><img src="img/Stopwords_time.PNG" height="50px" width="800px"/></p>
 
 <Br>
 
@@ -172,14 +173,14 @@ def remove_numbers(in_string):
     return cleaned_str
 ```
 
-<p align="left"><img src="Zahlen_time.PNG" height="50px" width="800px"/></p>
+<p align="left"><img src="img/Zahlen_time.PNG" height="50px" width="800px"/></p>
 
 <Br>
 
 
 ### Entfernung von nicht ASCII konformen Wörtern
 
-ASCII ist die Abkürzung für „American Standard Code for Information Interchange“ und es ist hierunter eine standardisierte Darstellungsform zu verstehen, mit welcher sich Zeichen durch ein elektronisches Gerät darstellen lassen. Über einen siebenstelligen Binärcode aus Einsen und Nullen lässt sich jedes dieser Zeichen erzeugen (IONOS SE, 2022). Da es sich hierbei um einen rein amerikanischen Standard handelt, werden Umlaute wie „ä, ö, ü“ oder weitere Sonderbuchstaben wie „ß“ oder „é, á“ nicht berücksichtigt. Würde der Datensatz beispielsweise deutsche Sätze enthalten, ist es wichtig, diese Umlaute zu normalisieren, da diese sonst einfach aus dem Datensatz gelöscht werden und die Bedeutung der Wörter verfälscht (Pomer, 2022). Da der Amazondatensatz, wie sich aus der Analyse ergab, lediglich englische Texte enthält, kann im Rahmen dieser Masterarbeit auf eine Bereinigung der Umlaute verzichtet werden, ohne dass die Modelle an Aussagekraft einbüßen. Zur Bereinigung von ASCII-Zeichen, wird folgende Formel definiert.
+ASCII ist die Abkürzung für „American Standard Code for Information Interchange“. Mithilfe standardisierte Darstellungsform lassen sich über siebenstelligen Binärcode aus Einsen und Nullen jedes Wort in ein elektronisches Gerät darstellen (IONOS SE, 2022). Da es sich hierbei um einen rein amerikanischen Standard handelt, werden Umlaute wie „ä, ö, ü“ oder weitere Sonderbuchstaben wie „ß“ oder „é, á“ nicht berücksichtigt. Würde der Datensatz beispielsweise deutsche Sätze enthalten, ist es wichtig, diese Umlaute zu normalisieren, da diese sonst einfach aus dem Datensatz gelöscht werden und die Bedeutung der Wörter verfälscht (Pomer, 2022).
 
 ```
 Entfernung nicht ASCII konformer Wörter
@@ -189,7 +190,22 @@ def remove_non_ascii_words(in_string):
     return cleaned_str
 ```
 
-<p align="left"><img src="ASCII_time.PNG" height="50px" width="800px"/></p>
+<p align="left"><img src="img/ASCII_time.PNG" height="50px" width="800px"/></p>
 
 <Br>
+
+
+## Literatur
+
+IONOS SE. (05. 04 2022). ASCII – Erklärung und Beispiele. Abgerufen am 08. 03 2023 von ionos.de: https://www.ionos.de/digitalguide/server/knowhow/ascii-american-standard-code-for-information-interchange/
+
+Luber D.-I. & Litzel N. (30. 11 2020). Was ist Stemming? Abgerufen am 22. 02 2023 von bigdata-insider.de: https://www.bigdata-insider.de/was-ist-stemming-a-980852/#:~:text=Abgrenzung%20von%20Stemming%20und%20Lemmatisierung&text=Stemming%2DAlgorithmen%20arbeiten%20meist%20mit,)%2C%20um%20Stammformen%20zu%20finden.
+
+Pomer, L. (03. 08 2022). Textklassifikation – Vorverarbeitung der Daten. Abgerufen am 14. 02 2023 von thecattlecrew.net: https://thecattlecrew.net/2022/08/03/textklassifikation-vorverarbeitung-der-daten/
+
+Teja, S. (10. 06 2020). Stop Words in NLP. Abgerufen am 24. 02 2023 von medium.com: https://medium.com/@saitejaponugoti/stop-words-in-nlp-5b248dadad47
+
+Yuzhe-Lu. (10. 12 2018). Topic-Modeling-on-Amazon-Reviews-using-LDA/2_LDA_Data_Processing.ipynb. Abgerufen am 14. 02 2023 von https://github.com/rrathgithub/Topic-Modeling-on-Amazon-Reviews-using-LDA/blob/master/2_LDA_Data_Processing.ipynb
+
+
 
