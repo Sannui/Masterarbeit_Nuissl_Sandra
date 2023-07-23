@@ -3,7 +3,7 @@ Dieses Notebook umfasst die Datenvorverarbeitung der Textdaten, da die Topic Mod
 
 <Br>
 
-<p align="left"><img src="img/Cleaned_data.PNG" height="200px" width="900px"/></p>
+<p align="center"><img src="img/Cleaned_data.PNG" height="200px" width="1000px"/></p>
 <p align="center>Fertig bereinigter Datensatz</p>
 
 <Br>
