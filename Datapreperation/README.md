@@ -120,7 +120,7 @@ def punctation(in_string):
     return cleaned_string
 ```
 
-<p align="left"><img src="Satzzeichen_time.PNG" height="50px" width="800px"/></p>
+<p align="left"><img src="img/Satzzeichen_time.PNG" height="50px" width="800px"/></p>
 
 <Br>
 
