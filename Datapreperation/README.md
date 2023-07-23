@@ -48,7 +48,7 @@ def to_lower(in_string):
     return out_string
 ```
 
-<p align="left"><img src="Lowercasing_time.PNG" height="50px" width="800px"/></p>
+<p align="left"><img src="img/Lowercasing_time.PNG" height="50px" width="800px"/></p>
 
 <Br>
 
