@@ -112,7 +112,7 @@ def stemming(in_string):
 
 Ein weiterer Schritt der Datenbereinigung bei Textdaten ist die Entfernung von Satzzeichen. Hier ist zu beachten, dass diese nicht ohne Weiteres entfernt werden können. Auf der einen Seite gibt es eine Reihe von Zeichen wie Klammern oder Punkte, welche den Inhalt und Kontext eines Datensatzes nicht maßgeblich beeinträchtigen. Daher lassen sich diese ohne Weiteres entfernen. Anders verhält es sich jedoch bei Kommata und Fragezeichen. Hierbei beeinflusst das Satzzeichen den Inhalt und kann daher die Analyse verfälschen. Sind im Datensatz viele Zahlen vorhanden, müssen die Kommata genauer untersucht werden, um zu vermeiden, dass aus einem Geldwert von 19,98 plötzlich das Jahr 1998 wird. Beide Zahlen hätten bei der Entfernung des Kommas den gleichen Wert und keine Aussagekraft (Pomer, 2022). Aus diesem Grund soll im Folgenden mit diesem Wissen im Hinterkopf eine Bereinigung der Satzzeichen stattfinden. Treten bei dem Ergebnis der Analyse vermehrt Zahlen oder andere Unstimmigkeiten auf, müssen die Satzzeichen ggf. in die Modelle miteinbezogen werden.
 
-!"#$%&\'()*+,-./:;<=>?@[\\]^_{|}~
+` !"#$%&\'()*+,-./:;<=>?@[\\]^_{|}~ `
 
 ```
 def punctation(in_string):
