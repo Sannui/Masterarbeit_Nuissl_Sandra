@@ -4,7 +4,8 @@ Dieses Notebook umfasst die Datenvorverarbeitung der Textdaten, da die Topic Mod
 <Br>
 
 <p align="center"><img src="img/Cleaned_Data.PNG" height="500px" width="1000px"/></p>
-<p align="center><"Fertig bereinigter Datensatz"/></p>
+<p align="center">Fertig bereinigter Datensatz</p>
+
 
 Die Preparation gliedert sich in zwei Kathegorien, die allgemeinen Bereinigungsschritte und die Bereinigung der Textdaten:
 
