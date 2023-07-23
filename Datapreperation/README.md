@@ -26,11 +26,88 @@ Die Preparation gliedert sich in zwei Kathegorien, die allgemeinen Bereinigungss
      <ul>2.5. Entfernung von Stopwords</ul>
      <ul>2.6. Entfernung von Zahlen</ul>
      <ul>2.7. Entfernung von nicht ASCII konformen Wörtern</ul>
-     <ul>2.8. Selection relevanter Spalten für den Export</ul>
     </ul>
 
 <Br>
 
 ## Wichtigste Schritte der Datapreparation
 
+
+
+<Br>
+#### Lowercasing
+Das Lowercasing beschäftigt sich mit der Groß- und Kleinschreibung in TExten. Da es für das Verständnis eines Textes bzw. der Wörter keiner Groß- und Kleinschreibung bedarf, kann der Datensatz in diesem Punkt vereinheitlicht werden(Pomer, 2022). 
+
+```
+# Konvertierung der Groß- und Kleinschreibung
+def to_lower(in_string):
+    out_string = in_string.lower()
+    return out_string
+```
+
+<Br>
+#### Lemmatisierung
+
+```
+# Überführen der Wörter in ihre Grundform
+def lemmatize(in_string):
+    # Definition der notwendigen Parameter
+    list_pos = 0                                  # Zuordnung einer Positionsnummer
+    cleaned_str = ''                              # Leerer String für bereinigte Wörter
+    text_token = nltk.word_tokenize(in_string)    # Tokenisieren der Sätze in einzelne Strings
+    tagged_words = pos_tag(text_token)            # Grammatikalisches Tagging
+    wnl = WordNetLemmatizer()                     # Klasse von NLTK für Lemmatisierung
+
+    # Durchfürhung der Lemmatisation und Zusammenführung der Ergebnisse in einen String
+    for word in tagged_words:
+        if 'v' in word[1].lower():
+            lemma = wnl.lemmatize(word[0], pos='v')
+        else:
+            lemma = wnl.lemmatize(word[0], pos='n')
+        if list_pos == 0:
+            cleaned_str = lemma
+        else:
+            cleaned_str = cleaned_str + ' ' + lemma
+        list_pos += 1
+    return cleaned_str
+```
+
+
+
+<Br>
+#### Stemming
+
+```
+
+```
+
+<Br>
+#### Entfernung von Satzzeichen
+
+```
+
+```
+
+<Br>
+#### Entfernung von Stopwords
+
+```
+
+```
+
+
+<Br>
+#### Entfernung von Zahlen
+
+```
+
+```
+
+
+<Br>
+#### Entfernung von nicht ASCII konformen Wörtern
+
+```
+
+```
 
