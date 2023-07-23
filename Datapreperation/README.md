@@ -47,6 +47,8 @@ def to_lower(in_string):
     out_string = in_string.lower()
     return out_string
 ```
+<center><img src="Lowercasing_time.PNG" height="100px" width="1000px"/></center>
+<p align="center">Parralelisierung des Lowercasing mithilfe von Joblib</p>
 
 <Br>
 
