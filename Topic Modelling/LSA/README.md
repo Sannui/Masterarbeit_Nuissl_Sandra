@@ -4,12 +4,11 @@ LSA ist die Kurzform für die „Latent Semantic Analysis“ und beschreibt eine
 
 <Br>
 <p align="center">
-  <img width="800" height="400" src="SVD_Methode.png">
+  <img width="900" height="400" src="SVD_Methode.png">
 </p>
-<p align="center">Bild</p>
+<p align="center">SVD – Methode (eigene Darstellung in Anlehung an (Deerwester, Dummais, & Harshman, 1990))</p>
 
 <Br>
-
 
 ## Theoretischer Hintergrund
 
