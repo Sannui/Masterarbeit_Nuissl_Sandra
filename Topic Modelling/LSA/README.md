@@ -32,7 +32,7 @@ LSA ist die Kurzform für die „Latent Semantic Analysis“ und beschreibt eine
 
 <Br>
 
-![Dropdown](Dropdown_animation.gif)
+![Property_per_Topic](LSA_property_per_Topic.gif)
 <p align="center">GIF</p>
 
 <Br>
