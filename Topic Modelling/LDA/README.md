@@ -32,7 +32,7 @@
 
 <Br>
 
-![LDA_Topics](LDA_visualization.html)
+![LDA_Topics](LDA_Topics.gif)
 <p align="center">GIF</p>
 
 <Br>
