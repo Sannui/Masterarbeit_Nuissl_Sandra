@@ -39,44 +39,9 @@ Neben dem ersten strukturellen und inhaltlichen Analyse der beiden Datensätze w
 
 <Br>
 
-## Hinweis zum Notebook
-### Glitly
+## Interaktive Analyse mit Jupyter-Dash
 
-Dieses Jupyter Notebook enthält Plotly Graphiken. Da diese in Github normalerweise aufgrund der statistischen Viewer nicht angezeigt werden können, wurde der Code mithilfe der Library [Gitly](https://github.com/Tiagoeem/gitly) in einem statistischen Format gerendert. Hierfür muss eine bestimmte Version von Plotly sowie glitly installiert werden:
-
-```
-%pip install gitly==1.0.1
-%pip install plotly>4.0.0
-```
-Für eine statistische Darstellung muss nach dem Import der Library das Objekt für GitHub instanziiert werden. Dies erfolgt durch die eingabe von "github" als Parameter.
-
-```
-# Import des Glitly Plotters
-from gitly.colab.plot import GitlyPlotter
-
-# Instanziierung des Objekts
-gitly = GitlyPlotter('github')
-```
-
-Nun können alle Plotlygraphiken auch in GitHub angezeigt werden, indem die Ausgabe der Diagramme angepasst wird:
-
-```
-fig = px.bar(df, x="column_1", y="column_2")
-gitly.show(fig)
-```
-
-Um wieder auf eine dynamische Darstellung zu wechseln, muss das Objekt mithilfe des Parameters "colab" neu instanziiert werden. Wichtig hierbei zu beachten ist, dass diese Library speziell für Colab entwickelt wurde und auch nur in diesem Framework verwendet werden kann. Wird das Notebook in einem anderen Editor ausgeführt, kann glitly gelöscht werden und die Ausgabe der Graphiken erfolgt wie gewohnt über die übelichen Befehle von Plotly.
-
-```
-# Instanziierung des Objekts
-gitly = GitlyPlotter('colab')
-```
-
-<Br>
-
-### Jupyter-Dash
-
-Eine weitere Library, welche zur Visualisierung der Outputs herangezogen wurde, ist Dash.
+Im Rahmen der Analyse wurd Jupyter - Dash zur Visualisierung herangezogen.
 Die letzte Analyse des Notebooks befasst sich mit der Anzahl der Reviews in Bezug auf die Marke und Produkte. Mithilfe des DropDown Menus lassen sich die Top 20 am häufigsten Bewerteten Marken auswählen und die Anzahl der Produkte ermitteln auf welche sich die Anzahl der Reviews bezieht.
 
 <Br>
