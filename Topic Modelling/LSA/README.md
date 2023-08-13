@@ -4,7 +4,7 @@ LSA ist die Kurzform für die „Latent Semantic Analysis“ und beschreibt eine
 
 <Br>
 <p align="center">
-  <img width="900" height="400" src="img/SVD_Methode.png">
+  <img width="850" height="400" src="img/SVD_Methode.png">
 </p>
 <p align="center">SVD – Methode (eigene Darstellung in Anlehung an (Deerwester, Dummais, & Harshman, 1990))</p>
 
@@ -70,7 +70,9 @@ Durch dieser Wahrscheinlichkeiten lassen sich Dominate Reviews eines Topics iden
 
 Die Aussagekraft der repträsentativen Wörter würde sich durch ein Hyperparametertuning verbessern lassen, indem die Wahl der opitmalen Topics angepasst wird:
 
-![Best Coherence](img/LSA_Best_Coherence.png)
+<p align="center">
+  <img width="850" height="400" src="img/LSA_Best_Coherence.png">
+</p>
 <p align="center">Wahl der optimalen Anzahl von Topics für eine optimierte Kohärenz (Eigene Darstellung)</p>
 <Br>
 
