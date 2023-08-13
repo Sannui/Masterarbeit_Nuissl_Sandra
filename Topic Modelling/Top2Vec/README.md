@@ -22,7 +22,7 @@ from top2vec import Top2Vec
 ```
 
 ### __Intitialisierung und Training__
-   
+Top2Vec kann sehr einfach über lediglich eine Codezeile implementiert werden. Die Klasse des Modells wird initialisiert, indem die zu untersuchenden Texte diesem übergeben werden. Es werden dann automatisch Wortdokumenten Vektoren mithilfe von „doc2vec“ erstellt und die Dimensionsreduktion sowie das Clustering durchgeführt. Die Parameter sind hierbei vordefiniert, können jedoch über „umap_args“ und „hdbscan_args“ angepasst werden (Weng, 2020). 
 
 
 ```
@@ -31,7 +31,7 @@ model_top2vec = Top2Vec(sentence_list,                        # Liste der zu unt
                         min_count = 50,                       # Excludieren der Wörter, welche eine geringere Frequenz haben
                         umap_args=None,                       # Verwendung der Default Werte von UMAP
                         hdbscan_args=None,                    # Verwendung der Default Werte von HDBSCAN
-                        verbose=True)
+                        verbose=True)                         # Progressbar
 ```
 <Br>
 
