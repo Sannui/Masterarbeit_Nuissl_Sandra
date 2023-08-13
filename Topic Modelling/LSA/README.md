@@ -37,3 +37,6 @@ LSA ist die Kurzform für die „Latent Semantic Analysis“ und beschreibt eine
 
 <Br>
 
+## Literatur
+
+IONOS SE. (05. 04 2022). ASCII – Erklärung und Beispiele. Abgerufen am 08. 03 2023 von ionos.de: https://www.ionos.de/digitalguide/server/knowhow/ascii-american-standard-code-for-information-interchange/
