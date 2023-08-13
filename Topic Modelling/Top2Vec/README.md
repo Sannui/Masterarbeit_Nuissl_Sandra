@@ -3,7 +3,7 @@ Top2Vec ist ein modernerer Ansatz des Topic Modelling und gehört ebenfalls in d
 
 <Br>
 <p align="center">
-  <img width="850" height="250" src="img/Top2Vec_Theorie.png">
+  <img width="850" height="450" src="img/Top2Vec_Theorie.png">
 </p>
 <p align="center">Continuos Bag-of-Words-Modell erweitert um den Distributed Memory-Version of Paragraph Vector (Eigene Abbildung in Anlehnung an (Le & Mikolov, 2014, S. 3))</p>
 
@@ -36,18 +36,15 @@ model_top2vec = Top2Vec(sentence_list,                        # Liste der zu unt
 <Br>
 
 ## Ergebnisse
-Gensim beitet ein interaktives Visualisierungstool, welches die Ergebnisse der Topic Modelling Abalyse von LDA optisch darstellt. Auf der linken Seite sind die Abstände zwischen den einzelnen Topics zu erkennen. Wird ein Thema ausgewählt gibt das Balkendiagramm auf der rechten Seite Aufschluss über die Häufigkeitsverteilung der Wörter in dem entsprechenden Topic (Mageshwaran, 2019).
+Top2Vec wählt aus den Gründen der Skalierbarkeit für große Datensätze und dem Erhalt der globalen sowie lokalen Strukturen UMAP. Um die Topics aus den Reviews in einem semantischen Raum zu extrahieren, wird HDBSACN als Clustering Algorithmus herangezogen. Dieses bildet dichte- und hierarchiebasierte Cluster und markiert alle Reviews, welche kein erkennbares zugrunde liegendes Thema aufweisen als Rauschen. Somit wird jedem Einbettungsvektor entweder ein Clusterlabel oder ein Rauschlabel zugeordnet (Angelov, 2020, S. 6-8). Die Ergebnisse dieser Clusteringanalyse für den Amazondatensatz wurde in einem 3D Scatterplot visuell veranschaulicht:
 <Br>
-```
-visualization_lda = pyLDAvis.gensim.prepare(lda_model, corpus, dictionary)
-```
 
-![Property_per_Topic](img/LDA_visualization.gif)
-<p align="center">Wahrscheinlichkeitsverteilung der Topics pro Review (Eigene Darstellung)</p>
+![Top2Vec_Cluster](img/Top2Vec_Cluster_3D_Ausreißer.gif)
+<p align="center">Darstellung der Dimensionsreduktion und des Clustering von Top2Vec nach dem Embedding mit Doc2Vec (Eigene Darstellung)</p>
 <Br>
 
 ### Repräsentative Wörter der Topics
-Durch dieser Wahrscheinlichkeiten lassen sich Dominate Reviews eines Topics identivizieren, welche zur Interpreation der Themen dienen.
+Das Topic Modelling Modell gibt für jedes Topic eine Reihe repräsentativer Wörter aus, welche zur Interpreation der Themen dienen.
 
 -	Topic 0: lasagna deliciozs tasty bland flavour
 -	Topic 1: recommend price good quality overall
@@ -62,13 +59,20 @@ Durch dieser Wahrscheinlichkeiten lassen sich Dominate Reviews eines Topics iden
 
 <Br>
 
-Top2Vec bietet zur Visualisierung die Implementierung einer Wordcloud mithilfe einer Funktion an.
+Top2Vec bietet darüber hinaus zur Visualisierung eine einfache Implementierung einer Wordcloud an.
 <p align="center">
-  <img width="850" height="400" src="img/To2Vec_Wordcloud.PNG">
+  <img width="850" height="300" src="img/Topic_Wordcloud.PNG">
 </p>
-<p align="center">Wahl der optimalen Anzahl von Topics für eine optimierte Kohärenz (Eigene Darstellung)</p>
+<p align="center">Wordcloud zur Visualisierung der Topics (Eigene Darstellung)</p>
 <Br>
 
 ## Literatur
 
+Angelov, D. (19. 08 2020). TOP2VEC: DISTRIBUTED REPRESENTATIONS OF TOPICS. Abgerufen am 10. 07 2023 von https://arxiv.org/pdf/2008.09470.pdf
+
+Lande, J. (29. 06 2022). Understanding Topic Modeling with Top2Vec. Abgerufen am 10. 07 2023 von medium.com: https://medium.com/@janhavil1202/understanding-topic-modeling-with-top2vec-cdf58bcd6c09
+
+Le, Q., & Mikolov, T. (22. 05 2014). Distributed Representations of Sentences and Documents. Abgerufen am 11. 07 2023 von arxiv.org: https://arxiv.org/pdf/1405.4053.pdf
+
+Weng, J. (21. 12 2020). Topic Modeling in One Line with Top2Vec. Abgerufen am 10. 07 2023 von towardsdatascience.com: https://towardsdatascience.com/topic-modeling-in-one-line-with-top2vec-a413991aa0ef
 
