@@ -29,7 +29,7 @@ from contextualized_topic_models.utils.data_preparation import bert_embeddings_f
 ```
 
 ### __Intitialisierung__
-Das Pre-Trained-Modell von BERtopic wird initialisiert, indem die Klasse „BERTopic“ aufgerufen und in einer Variable gespeichert wird. Hierbei sind die Stufen des Embeddings, der Dimensionsreduktion und des Clusterings zusammengefasst. 
+Die vorverarbeiteten Embeddings enthalten die 2.000 Wörter, welche am häufigsten Auftreten. Auf diese Weise sollen wenig aussagekräftige Wörter entfernt werden, um den Trainingsprozess zu optimieren. Zur Initialisierung des Objekts wird die Länge des Vokabulars und und die Länge der Embedings aus „X_contextual“ übergeben. Über den Paramter „n_components“ kann festgelegt werden, wie viele Topics aus dem Modell generiert werden sollen. Ist dieser Parameter nicht gesetzt, so werden stets zehn Topics identifiziert (Bianchi, Contextualized Topic Modeling with Python (EACL2021), 2021).
 ```
 zeroshot_model = ZeroShotTM(bow_size=len(embedding_model.vocab),
                             contextual_size=embeddings[1]["X_contextual"].shape[0])
@@ -37,13 +37,14 @@ zeroshot_model = ZeroShotTM(bow_size=len(embedding_model.vocab),
 <Br>
 
 ### __Anwendung des Modells__
-Die Anwendung auf den Amazondatensatz erfolgt über ein "fit_transform()" Funktion, welche die Topics pro Review, sowie deren Wahrscheinlichkeiten ausgibt.
+Die Anwendung auf den Amazondatensatz erfolgt über ein "fit()" Funktion.
 ```
 zeroshot_model.fit(embeddings)
 ```
 <Br>
 
 ## Ergebnisse
+Das Topic Modelling Modell gibt für jedes Topic eine Reihe repräsentativer Wörter aus, welche zur Interpreation der Themen dienen.
 
 -	Topic 0: camp cooler backpacking food trip pack ice emergency camping oven
 -	Topic 1: considered coat meaning micro drawback anyways factor http suspect afford
@@ -56,13 +57,14 @@ zeroshot_model.fit(embeddings)
 -	Topic 8: whistle disc bass chalk trout flies lure stopwatch therapy frisbee
 -	Topic 9: considered complained meaning drawback sat admit factor search suspect
 
-<p align="center">
-  <img width="850" height="450" src="img/BERT_Topics.png">
-</p>
-<p align="center">Repräsentative Wörter je Topic (Eigene Darstellung)</p>
 <Br>
 
-
+ZeroShotTM bietet darüber hinaus zur Visualisierung eine einfache Implementierung einer Wordcloud an.
+<p align="center">
+  <img width="850" height="300" src="img/ZeroSHotTM_Wordcloud.png">
+</p>
+<p align="center">Wordcloud zur Visualisierung der Topics (Eigene Darstellung)</p>
+<Br>
 
 ## Literatur
 
