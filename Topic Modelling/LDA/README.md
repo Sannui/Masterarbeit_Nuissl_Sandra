@@ -60,7 +60,7 @@ visualization_lda = pyLDAvis.gensim.prepare(lda_model, corpus, dictionary)
 <Br>
 
 ### Repräsentative Wörter der Topics
-Durch dieser Wahrscheinlichkeiten lassen sich Dominate Reviews eines Topics identivizieren, welche zur Interpreation der Themen dienen.
+LDA gibt zu jedem Topic eine Reihe repräsentativer Wörter an, welche zur Interpreation der Themen dienen.
 
 -	Topic 0: nt get one like great mat go buy use time
 -	Topic 1: use one get size small nt year good time box
