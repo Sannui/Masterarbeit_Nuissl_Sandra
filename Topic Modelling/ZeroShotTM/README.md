@@ -1,9 +1,9 @@
 # Implementierung des Topic Modelling Modells: ZeroShotTM
-Theoretischer Text...
+Zero – Shot Topic Modelling ist wie BERTopic ein neuronales Themenmodell, welches sich der Problematik der Mehrsprachigkeit von Texten und dem Umgang mit fehlenden Worten im Korpus, wie es bei einem Bag of Words Ansatz vorkommen kann, befasst. Es ist eines der modernsten Ansätze in diesem Bereich und wurde 2020 in dem Paper „Cross-lingual Contextualized Topic Models with Zero-shot Learning“ von Bianchi und seinen Forschungskollegen vorgestellt. Die Besonderheit dieses Modells ist es, dass bereits bestehende Modell miteinander kombiniert werden, um Synergieeffekte zu erzeugen (Bianchi, Contextualized Topic Modeling with Python (EACL2021), 2021).
 
 <Br>
 <p align="center">
-  <img width="850" height="400" src="img/ZeroSHotTM_Theorie.png">
+  <img width="850" height="200" src="img/ZeroShotTM_Theorie.png">
 </p>
 <p align="center">Architektur des ZeroShotTM (Eigene Darstellung in Anlehnung an (Bianchi, Terragni, Hovy, Nozza, & Fersini, 2020))</p>
 
@@ -61,7 +61,7 @@ Das Topic Modelling Modell gibt für jedes Topic eine Reihe repräsentativer Wö
 
 ZeroShotTM bietet darüber hinaus zur Visualisierung eine einfache Implementierung einer Wordcloud an.
 <p align="center">
-  <img width="850" height="300" src="img/ZeroSHotTM_Wordcloud.png">
+  <img width="850" height="300" src="img/ZeroShotTM_Wordcloud.png">
 </p>
 <p align="center">Wordcloud zur Visualisierung der Topics (Eigene Darstellung)</p>
 <Br>
