@@ -68,3 +68,7 @@ ZeroShotTM bietet darüber hinaus zur Visualisierung eine einfache Implementieru
 
 ## Literatur
 
+Bianchi, F. (11. 02 2021). Contextualized Topic Modeling with Python (EACL2021). Abgerufen am 30. 07 2023 von towardsdatascience.com: https://towardsdatascience.com/contextualized-topic-modeling-with-python-eacl2021-eacf6dfa576
+
+Grootendorst, M. (19. 01 2023). Faster Topic Modeling with BERTopic and RAPIDS cuML. Abgerufen am 02. 08 2023 von medium.com: https://medium.com/rapids-ai/faster-topic-modeling-with-bertopic-and-rapids-cuml-5c7559aba898
+
