@@ -1,9 +1,9 @@
 # Implementierung des Topic Modelling Modells: BERTopic
-
+„BERTopics“ ist die Kurzform für „Bidirectional Encoder Representations from Transformers“ und ist eine der modernsten Techniken im Bereich des Topic Modelling (Nick, 2023). Es zählt zu den Deep Learning Modellen und wurde 2019 von Jacob Devlin, Ming-Wei Chang, Kenton Lee und Kristina Toutanova in einem Paper „BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding“ vorgestellt (Devlin, Chang, Lee, & Toutanova, 2019). Das Modell lässt sich in mehrere Schritte untergliedern, welche durch das Pre-Trained-Modell in den Standardeinstellungen vordefiniert sind. Jedoch sind die einzelnen Prozessschritte des Modells nicht voneinander abhängig, wodurch diese sich unterschiedlich kombinieren lassen. Je nach Wunsch und Anwendungsfall können unterschiedliche Modelle zum Clustering, der Tokenisierung oder dem Fine Tuning angewendet werden. Auf diese Weiße ist bei BERTopic eine gewisse Modularität möglich (Grootendorst, BERTopic, 2023):
 
 <Br>
 <p align="center">
-  <img width="850" height="450" src="img/BERTopic_Theorie.png">
+  <img width="850" height="400" src="img/BERTopic_Theorie.png">
 </p>
 <p align="center">Stufen des Topic Modelling Modells BERTopic (Eigene Darstellung in Anlehnung an (Grootendorst, 2023))</p>
 
@@ -24,53 +24,62 @@ Die Implementierung ist hierfür im Folgenden aufgeführt:
 from bertopic import BERTopic
 ```
 
-### __Intitialisierung und Training__
-
-
-
+### __Intitialisierung__
+Das Pre-Trained-Modell von BERtopic wird initialisiert, indem die Klasse „BERTopic“ aufgerufen und in einer Variable gespeichert wird. Hierbei sind die Stufen des Embeddings, der Dimensionsreduktion und des Clusterings zusammengefasst. 
 ```
-model_
+bert_model = BERTopic(embedding_model          = SentenceTransformer("all-MiniLM-L6-v2")
+                      umap_model               = UMAP(n_neighbors=15, n_components=3, min_dist=0.0, metric='cosine', verbose=True)
+                      hdbscan_model            = HDBSCAN(min_cluster_size=15, metric='euclidean', cluster_selection_method='eom',
+                                                         prediction_data=True, core_dist_n_jobs=-1)
+                      vectorizer_model         = CountVectorizer(stop_words="english")
+                      ctfidf_model             = ClassTfidfTransformer()
+                      representation_model     = KeyBERTInspired()
+                      calculate_probabilities  = True,
+                      verbose                  = True)
+```
+<Br>
+
+### __Anwendung des Modells__
+Die Anwendung auf den Amazondatensatz erfolgt über ein "fit_transform()" Funktion, welche die Topics pro Review, sowie deren Wahrscheinlichkeiten ausgibt.
+```
+topics, probabilities = bert_model.fit_transform(cleaned_list)
 ```
 <Br>
 
 ## Ergebnisse
-Top2Vec wählt aus den Gründen der Skalierbarkeit für große Datensätze und dem Erhalt der globalen sowie lokalen Strukturen UMAP. Um die Topics aus den Reviews in einem semantischen Raum zu extrahieren, wird HDBSACN als Clustering Algorithmus herangezogen. Dieses bildet dichte- und hierarchiebasierte Cluster und markiert alle Reviews, welche kein erkennbares zugrunde liegendes Thema aufweisen als Rauschen. Somit wird jedem Einbettungsvektor entweder ein Clusterlabel oder ein Rauschlabel zugeordnet (Angelov, 2020, S. 6-8). Die Ergebnisse dieser Clusteringanalyse für den Amazondatensatz wurde in einem 3D Scatterplot visuell veranschaulicht:
+
+BERTopic baut auf einem Clustering-Embeddings-Ansatz auf und erweitert diesen um eine klassenbasierte TF-IDF-Variante zur Darstellung der Themen (Grootendorst, 2022, S. 2). Die Dimensionsreduktion erfolgt mithilfe von UMAP und für das Clustering wurde HDBSCAN herangezogen, wodurch die semantische Komponente bei der Erstellung von Clustern berücksichtigt wird. Darüber hinaus sind alle Daten bei HDBSCAN normalisiert, um Größenunterschiede auszugleichen. Das Ergebnis ist eine Ansammlung von Clustern, welche in der Abbildung zu sehen sind. Der weiße "Nebel" stellt die Ausreißer da, welche keinem Cluster/ Topic zugeordnet werden konnten (Grootendorst, BERTopic, 2023).
 <Br>
 
-![Top2Vec_Cluster](img/Top2Vec_Cluster_3D_Ausreißer.gif)
-<p align="center">Darstellung der Dimensionsreduktion und des Clustering von Top2Vec nach dem Embedding mit Doc2Vec (Eigene Darstellung)</p>
+![BERTopic_Cluster](img/BERTopic_Cluster_Ausreißer.gif)
+<p align="center">Darstellung der Dimensionsreduktion und des Clustering durch BERTopic (Eigene Darstellung)</p>
 <Br>
 
 ### Repräsentative Wörter der Topics
-Das Topic Modelling Modell gibt für jedes Topic eine Reihe repräsentativer Wörter aus, welche zur Interpreation der Themen dienen.
-
--	Topic 0: lasagna deliciozs tasty bland flavour
--	Topic 1: recommend price good quality overall
--	Topic 2: lansky stone sharpening stone strop
--	Topic 3: hatchet fiskars hatchets logs chopping
--	Topic 4: mirrors mirror mirrycle view traffic
--	Topic 5: mat xoga manduka mats jade poses studio
--	Topic 6: helmet helmets giro visor crash ventilator
--	Topic 7: elbow flexbar tennis tendonitis thera
--	Topic 8: coolers cooler igloo ice drinks yeti
--	Topic 9: frisbee frisbees disc aerobie discs
-
+Für die ermittelten Cluster werden Themen identifiziert. Das Topic Modelling Modell gibt für jedes Topic eine Reihe repräsentativer Wörter aus, welche zur Interpreation der Themen dienen. BERTopic verfügt hierfür über unterschiedlichste Visualisierungsmöglichkeiten:
 <Br>
-
-Top2Vec bietet darüber hinaus zur Visualisierung eine einfache Implementierung einer Wordcloud an.
 <p align="center">
-  <img width="850" height="300" src="img/Topic_Wordcloud.PNG">
+  <img width="850" height="450" src="img/BERT_Topics.png">
 </p>
-<p align="center">Wordcloud zur Visualisierung der Topics (Eigene Darstellung)</p>
+<p align="center">Repräsentative Wörter je Topic (Eigene Darstellung)</p>
 <Br>
+
+Eine Weitere Möglichkeit von BERTopic ist die Visualisierung des Verhältnisses der Dokumente in Bezug auf die Topics. Hierbei werden die Dokumente in eine zweidimensionale Darstellung geplottet. Die Farbe Repräsentiert das Topic des Dokuments. Auf diese Weise lässt sich erkennen, ob die Dokumente den richtigen Themen zugeordnet wurden oder ob es überlappende Themen gibt.
+<p align="center">
+  <img width="850" height="450" src="img/BERT_Topic_Docs.png">
+</p>
+<p align="center">Verhältnis der Dokumente in Bezug auf die Topics (Eigene Darstellung)</p>
+<Br>
+
 
 ## Literatur
 
-Angelov, D. (19. 08 2020). TOP2VEC: DISTRIBUTED REPRESENTATIONS OF TOPICS. Abgerufen am 10. 07 2023 von https://arxiv.org/pdf/2008.09470.pdf
+Devlin, J., Chang, M.-W., Lee, K., & Toutanova, K. (07. 06 2019). BERT: Pre-training of Deep Bidirectional Transformers for. Von Association for Computational Linguistics: https://aclanthology.org/N19-1423.pdf abgerufen
 
-Lande, J. (29. 06 2022). Understanding Topic Modeling with Top2Vec. Abgerufen am 10. 07 2023 von medium.com: https://medium.com/@janhavil1202/understanding-topic-modeling-with-top2vec-cdf58bcd6c09
+Grootendorst, M. (14. 04 2023). BERTopic. Abgerufen am 28. 04 2023 von github.com: https://maartengr.github.io/BERTopic/algorithm/algorithm.html#1-embed-documents
 
-Le, Q., & Mikolov, T. (22. 05 2014). Distributed Representations of Sentences and Documents. Abgerufen am 11. 07 2023 von arxiv.org: https://arxiv.org/pdf/1405.4053.pdf
+Grootendorst, M. (11. 03 2022). BERTopic: Neural topic modeling with a class-based TF-IDF procedure. Abgerufen am 28. 04 2023 von Cornell University: https://arxiv.org/abs/2203.05794
 
-Weng, J. (21. 12 2020). Topic Modeling in One Line with Top2Vec. Abgerufen am 10. 07 2023 von towardsdatascience.com: https://towardsdatascience.com/topic-modeling-in-one-line-with-top2vec-a413991aa0ef
+Grootendorst, M. (19. 01 2023). Faster Topic Modeling with BERTopic and RAPIDS cuML. Abgerufen am 02. 08 2023 von medium.com: https://medium.com/rapids-ai/faster-topic-modeling-with-bertopic-and-rapids-cuml-5c7559aba898
 
+Nick, T. P. (11. 02 2023). Topic Modeling with BERTopic: A Cookbook with an End-to-end Example (Part 1). Abgerufen am 28. 04 2023 von medium.com: https://medium.com/@nick-tan/topic-modeling-with-bertopic-a-cookbook-with-an-end-to-end-example-part-1-3ef739b8d9f8
