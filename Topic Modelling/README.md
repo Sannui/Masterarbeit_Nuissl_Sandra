@@ -42,10 +42,7 @@ perplexity = np.exp(log_perplexity)
 
 ```
 
-<p align="center">
-  <img width="850" height="250" src="img/Perplexity.png">
-</p>
-<p align="center">...</p>
+
 <Br>
 
 ## Similarity
