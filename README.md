@@ -1,10 +1,7 @@
-# Empirische Evaluation von ‚State of the Art‘ Topic Modelling Ansätze am Beispiel von Produktreviews für die Entscheidungsunterstützung in Unternehmen.
-Masterarbeit
+# Empirische Evaluation von "State Of The Art" Topic Modeling Ansätze am Beispiel von Produktreviews für die Entscheidungsunterstützung in Unternehmen
 
-<center><img src="Titelbild.jpg" height="300px" width="1100px"/></center>
-
-<center>https://www.cloudways.com/blog/wp-content/uploads/Product-Review-1024x576.jpg</center>
-
+<center><img src="https://www.cloudways.com/blog/wp-content/uploads/Product-Review-1024x576.jpg" height="300px" width="1100px"/></center>
+Masterarbeit von Sandra Nuißl - 14.08.2023
 
 
 
