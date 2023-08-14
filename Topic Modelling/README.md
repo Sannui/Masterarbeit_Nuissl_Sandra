@@ -125,3 +125,18 @@ Auffällig bei der Analyse der Similarity ist, dass bei BERTopic die Diagonale i
 
 ## Literatur
 
+Campagnola, C. (18. 05 2020). Perplexity in Language Models. Abgerufen am 24. 07 2023 von towardsdatascience.com: https://towardsdatascience.com/perplexity-in-language-models-87a196019a94
+
+Hugging-Face. (kein Datum). Perplexity of fixed-length models. Abgerufen am 05. 08 2023 von huggingface.co/docs: https://huggingface.co/docs/transformers/perplexity
+
+Kapadia, S. (19. 08 2019). Evaluate Topic Models: Latent Dirichlet Allocation (LDA). Abgerufen am 21. 06 2023 von towardsdatascience.com: https://towardsdatascience.com/evaluate-topic-model-in-python-latent-dirichlet-allocation-lda-7d57484bb5d0
+
+Röder, M., Both, A., & Hinneburg, A. (2015). Exploring the Space of Topic Coherence Measures. Abgerufen am 24. 06 2023 von svn.aksw.org: https://svn.aksw.org/papers/2015/WSDM_Topic_Evaluation/public.pdf
+
+Rüdiger, M., Antons, D., Joshi, A. M., & Salge, T.-O. (28. 04 2022). Topic modeling revisited: New evidence on algorithm performance and quality metrics. Abgerufen am 13. 06 2023 von journals.plos.org: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0266325
+
+Sitikhu, P., Pahi, K., Thapa, P., & Shakya, S. (31. 10 2019). A Comparison of Semantic Similarity Methods for Maximum Human Interpretability. Abgerufen am 05. 08 2023 von Department of Electronics and Computer Engineering, Tribhuwan University: https://arxiv.org/pdf/1910.09129.pdf
+
+Sphinx-Documentation. (2016). gensim.models.LdaModel.log_perplexity. Abgerufen am 24. 07 2023 von tedboy.github.io: https://tedboy.github.io/nlps/generated/generated/gensim.models.LdaModel.log_perplexity.html
+
+Supe, K. (07. 06 2023). Understanding Cosine Similarity in Python with Scikit-Learn. Abgerufen am 05. 08 2023 von memgraph.com/: https://memgraph.com/blog/cosine-similarity-python-scikit-learn
