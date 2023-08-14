@@ -1,14 +1,15 @@
 # Implementierung der Topic Modelling Modelle und deren empirische Evaluierung
 
-In diesem Ordner des Github Repositorys sind die Notebooks der Implementierung und Evaluierung der fünf ausgewählten Topic Modelling Modelle. Da teilweise Probleme mit der Kompatibilität der verschiedenen Versionen von Libraries, welche für die einzelnen Modelle benötigt werden, aufgetreten sind, wurden diese in seperate Notebooks implementiert.
+In diesem Ordner des Github Repositorys sind die Notebooks der Implementierung und Evaluierung der fünf ausgewählten Topic Modelling Modelle. Da teilweise Probleme mit der Kompatibilität der verschiedenen Versionen von Libraries, welche für die einzelnen Modelle benötigt werden, aufgetreten sind, wurden diese in seperate Notebooks implementiert. Aus den Analysen ergaben sich unterschiedlich qualitativ hochwertige Interpretationen der Topics, wie in der Tabelle zu erkennen ist.
 
 <p align="center">
   <img width="850" height="500" src="img/Topics_Words.png">
 </p>
-<p align="center">Identifizierte Topics der Topic Modelling Modelle(Eigene Darstellung))</p>
+<p align="center">Repräsentative Wörter der identifizierte Topics der Topic Modelling Modelle(Eigene Darstellung))</p>
 <Br>
 
-Für die Evaluierung wurden neben einem allgemeinen Vergleich der Vor- und Nachteile sowie einer qualitativen Untersuchung der Topics, drei Evaluierungsmetriken herangezogen:
+Für die Evaluierung wurden neben einem allgemeinen Vergleich der Vor- und Nachteile sowie einer qualitativen Untersuchung der Topics, welche in der schriftlichen Ausarbeitung festgehalten wurden, drei Evaluierungsmetriken herangezogen:
+
 1. Kohärenz
 2. Perplexity
 3. Similarity
