@@ -18,7 +18,7 @@ Die Masterarbeit baut beinhaltet eine Reihe von Notebooks, welch in der schriftl
 Im Rahmen dieser Masterarbeit sollen Methoden zum Thema Topic Modelling aus dem Bereich des Maschine und Deep Learning untersucht sowie verglichen werden. LDA ist eines der weitverbreiteten Modelle für Topic Modellig, aber gibt es noch smartere Lösungen? Welche Methoden gibt es noch und welche Vor- bzw. Nachteile weisen diese auf? Welches Modell liefert die besten Ergebnisse und welche Informationen lassen sich mithilfe des Topic Modelling aus Produktbewertungen extrahieren? Ziel der Arbeit ist es eine State of the Art Analyse von verschiedenen Topic Modellig Modellen aus Machine und Deep Learning durchzuführen und die Algorithmen mithilfe verschiedener Metriken zu evaluieren. Anschließend soll ein Vorschlag für ein optimiertes Analyse Dashboard für Produktreviews erstellt werden, um verschiedene Kernfragen in einem Bericht zu vereinen und eine valide Grundlage für Entscheidungsträger zu schaffen. Die Analyse der Reviewtexte soll über eine allgemeine Clusterbildung hinaus gehen und beispielsweise einen zeitlichen Verlauf der Bewertungen enthalten, um so die Entwicklung eines Produktes bewerten zu können oder Trend zu erkennen (Highlighten). Weitere Beispiele sind die Betrachtung von Mulithemen oder das Erkennen von Hierarchien. Somit ergibt sich für diese Masterarbeit folgende Forschungsfrage:
 
 <Hr>
-„Empirische Evaluation von ‚State of the Art‘ Topic Modelling Ansätze am Beispiel von Produktreviews für die Entscheidungsunterstützung in Unternehmen.“
+<p align="center">„Empirische Evaluation von ‚State of the Art‘ Topic Modelling Ansätze am Beispiel von Produktreviews für die Entscheidungsunterstützung in Unternehmen.“</p>
 <Hr>
 <Br>
 
