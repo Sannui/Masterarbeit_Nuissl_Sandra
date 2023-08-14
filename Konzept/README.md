@@ -2,10 +2,10 @@
 
 
 Resultierend aus den Ausführungen im Rahmen dieser Masterarbeit bietet sich für eine Konzepterstellung zur Implementierung einer optimierten Analyse von Produktreviews zur Unterstützung von Entscheidungsträgern das Topic Modelling Modell BERTopic an. Es besitzt bereits eine umfangreiche Pipeline zur Bildung von Clustern und der Identifikation von Topics. Darüber hinaus lassen sich schnell diverse Visualisierungen implementieren. Für eine erhöhte Variabilität können Filteroptionen mitaufgenommen werden, welche eine Selektion einer Marke oder darüber hinaus ein bestimmtes Produkt dieser Marke.
-
+<Br>
 
 ![Konzept](img/Konzept_Webanwendung.gif)
-<p align="center">Webapp, welche das Konzept einer optimierten Analyse von Reviewdaten enthält</p>
+<p align="center">Webapp, welche das Konzept einer optimierten Analyse von Reviewdaten enthält (Eigene Darstellung)</p>
 <Br>
 
 
