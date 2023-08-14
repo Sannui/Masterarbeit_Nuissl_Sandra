@@ -9,7 +9,7 @@ Resultierend aus den Ausführungen im Rahmen dieser Masterarbeit bietet sich fü
 <p align="center">Webapp, welche das Konzept einer optimierten Analyse von Reviewdaten enthält (Eigene Darstellung)</p>
 <Br>
 
->> Die Webapp kann aufgerufen werden, indem das Jupyter Noebook heruntergeladen wird und der Bereinigte Datensatz aus der Datapreparation geladen wir. Ein hosting über render war leider aufgrund des Umfangs der Rechenschritte nicht möglich.
+>> Die Webapp kann aufgerufen werden, indem das Jupyter Noebook heruntergeladen wird und der Bereinigte Datensatz aus der Datapreparation geladen wir. Ein hosting über render war leider aufgrund des Umfangs der Rechenschritte nicht möglich. Der Vollständigkeit ist aber das Python File unter dem Namen "app.py" mit hochgelande.
 
 
 ## Zukünftige Schritte und Möglichkeiten
