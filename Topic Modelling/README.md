@@ -12,14 +12,15 @@ Für die Evaluierung wurden neben einem allgemeinen Vergleich der Vor- und Nacht
 1. Kohärenz
 2. Perplexity
 3. Similarity
-   
+<Br>   
 
 
 
 ## Kohärenz
 
 ### Theory
-Die Kohärenz bezieht sich auf die semitische Verbundenheit von Wörtern, welche im Rahmen des Topic Modelling in Wortlisten gespeichert sind. Durch Sinnbeziehungen der Einheiten des Textes wirkt dieser auf den Leser semantisch konsistent und logisch (Rüdiger, Antons, Joshi, & Salge, 2022). Verallgemeinert gesagt ist eine Aussage kohärent, wenn sich die Inhalte gegenseitig stützen. Mithilfe von Themenkohärenzmaße lässt sich die Ähnlichkeit der Wörter in Bezug auf ein bestimmtes Thema messen (Kapadia, 2019). 
+Die Kohärenz bezieht sich auf die semitische Verbundenheit von Wörtern, welche im Rahmen des Topic Modelling in Wortlisten gespeichert sind. Durch Sinnbeziehungen der Einheiten des Textes wirkt dieser auf den Leser semantisch konsistent und logisch (Rüdiger, Antons, Joshi, & Salge, 2022). Verallgemeinert gesagt ist eine Aussage kohärent, wenn sich die Inhalte gegenseitig stützen. Mithilfe von Themenkohärenzmaße lässt sich die Ähnlichkeit der Wörter in Bezug auf ein bestimmtes Thema messen (Kapadia, 2019). Die Berechnung der Kohärenz beginnt mit der Bildung von Wortpaaren im Rahmen der Segmentierung. Im Anschluss folgt die Wahrscheinlichkeitsberechnung zur Ermittlung der Auftrittswahrscheinlichkeit, welche die Basis der Kohärenzmessung liefert. Um die Beziehung der Wortpaare zu quanitfizieren kann das direkte oder indirekte Bewertungsmaß verwendet werden. Während der direkte Bestätigungswert die Wahrscheinlichkeiten der Wortpaarungen direkt ins Verhältnis zu den Wahrscheinlichkeiten der beide Teilelemente setzt, werden bei dem indirekten Bestätigungswert die Maßvektoren der beiden Teilmengen verglichen. Abschließend werden die daraus entstandenen Themenkohärenzen aggregiert zur Ermittlung der geammten Kohärenz (Röder, Both, & Hinneburg, 2015, S. 3 ff.).
+
 <p align="center">
   <img width="850" height="400" src="img/Coherence_Theory.png">
 </p>
