@@ -1,7 +1,7 @@
 # Empirische Evaluation von "State Of The Art" Topic Modeling Ansätze am Beispiel von Produktreviews für die Entscheidungsunterstützung in Unternehmen
 
 <center><img src="img/Topic_Modelling.png" height="400px" width="1100px"/></center>
-von Sandra Nuißl - 14.08.2023
+von [Sandra Nuißl](Eigenständigkeitserklärung.pdf) - 14.08.2023
 <Br>
 <Br>
 
