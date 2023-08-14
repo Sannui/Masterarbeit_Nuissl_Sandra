@@ -15,7 +15,6 @@ Für die Evaluierung wurden neben einem allgemeinen Vergleich der Vor- und Nacht
 <Br>   
 
 
-
 ## Kohärenz
 
 ### Theory
@@ -24,10 +23,11 @@ Die Kohärenz bezieht sich auf die semitische Verbundenheit von Wörtern, welche
 <p align="center">
   <img width="850" height="400" src="img/Coherence_Theory.png">
 </p>
-<p align="center">Berechnung der des Kohärenzscores (Eigene Abbildung in Anlehnung an (Röder, Both, & Hinneburg, 2015, S. 5))</p>
+<p align="center">Berechnung des Kohärenzscores (Eigene Abbildung in Anlehnung an (Röder, Both, & Hinneburg, 2015, S. 5))</p>
 <Br>
 
 ### Implementierung
+Zur Berechnung der Kohärenz wird für die Modelle LSA, LDA, Top2Vec und BERTopic die Klasse zur Kohärenberechnung von [Gensim](https://radimrehurek.com/gensim/models/coherencemodel.html) herangezogen. Da LDA ebenfalls über Gensim implementiert wurden kann an das Modell statt der Parameter "topics" und "texts" direkt das Modell ("model") übergeben werden. Für die übrigen Modelle müssen die Parameter teilweise aus den Daten extrahiert und in das passen de Format transformiert werden, um den Score zu errechnen.
 ```
 coherence_model = CoherenceModel(topics     = topic_list, 
                                  texts      = token_list, 
@@ -35,9 +35,14 @@ coherence_model = CoherenceModel(topics     = topic_list,
                                  dictionary = dictionary, 
                                  coherence  = 'c_v')
 ```
+[ZeroShotTM](https://github.com/MilaNLProc/contextualized-topic-models/blob/master/contextualized_topic_models/evaluation/measures.py) bietet in der Dokumetation auf Github eine eigene Klasse, welche auf das Modell abgestimmt ist und ohne weiter Transformation der Daten implementiert werden kann.
+```
+coherence_model = CoherenceCV(texts=token_list, topics=topics)
+```
 <Br>
 
 ### Ergebnisse
+
 <p align="center">
   <img width="850" height="450" src="img/Coherence.png">
 </p>
@@ -46,7 +51,9 @@ coherence_model = CoherenceModel(topics     = topic_list,
 
 
 ## Perplexity
+
 ### Theory
+
 <p align="center">
   <img width="850" height="180" src="img/Perplexity_Theory.png">
 </p>
