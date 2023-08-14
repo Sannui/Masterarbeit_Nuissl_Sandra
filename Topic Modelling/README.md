@@ -93,7 +93,7 @@ Werden die Ergebnisse der verwendeten Modelle zueinander in Relation gesetzt, f�
 
 ## Similarity
 ### Theory
-
+Die „Cosine Similarity“ gibt ein Maß für die Ähnlichkeit zweier Vektoren wieder, welche sich in einem mehrdimensionalen Raum befinden. Der Score basiert auf dem Kosinus der Winkelmessung und bezieht sich auf die Orientierung der Vektoren anstatt auf deren Länge (Sitikhu, Pahi, Thapa, & Shakya, 2019, S. 2). Dies bedeutet, dass sich zwei Dokumente ähnlich sein können, obwohl dieses völlig unterschiedliche Längen aufweise. Das Ergebnis der Kosinusähnlichkeit kann zwischen -1 und 1 liegen. Wenn ein Winkel zwischen zwei Vektoren klein ist, tendiert der Kosinus des Winkels gegen eins, was sich als ein hohes Maß an Ähnlichkeit interpretieren lässt. Je größer der Winkel wird, desto unähnlicher sind sich die Dokumente. Bei 90° und einem Kosinus Wert um null spricht man von orthogonalen Vektoren. Nimmt Kosinus den Wert -1 an, so nähert sich deren Winkel 180° und die Reviews bzw. Wörter sind mit einem gegenteiligen Inhalt zu interpretieren (Supe, 2023).
 <p align="center">
   <img width="850" height="300" src="img/Similarity_Theory.png">
 </p>
@@ -101,17 +101,27 @@ Werden die Ergebnisse der verwendeten Modelle zueinander in Relation gesetzt, f�
 <Br>
 
 ### Implementierung
+Zur Implementierung der Kosinusähnlichkeit wird eine Funktion der Library [Sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html) herangezogen.
 ```
 similarity = cosine_similarity(doc_1, doc_2)
 ```
 <Br>
 
 ### Ergebnisse
+Die Diagonale repräsentiert die Ähnlichkeit der Inhalte innerhalb eines Topics und die übrigen Felder der Heatmap vergleicht die Inhalte der Topics untereinander. Alles in allem sind die Werte innerhalb eines Topics leicht höher als die Inhalte im Vergleich unterschiedlicher Topics. Diese Ergebnisse bestätigen die Erwartungen, da alle Reviews dem Überbegriff „Sport and Outdoors“ zuzuordnen sind und sich die Inhalte somit ähneln.
 <p align="center">
   <img width="850" height="550" src="img/Similarity.png">
 </p>
 <p align="center">Similarity Scores der Topic Modelling Modelle LSA, LDA, Top2Vec und ZeroShotTM (Eigene Darstellung)</p>
 <Br>
+
+Auffällig bei der Analyse der Similarity ist, dass bei BERTopic die Diagonale immer eins ergibt, sich aber die übrigen Werte in einem vergleichbaren Bereich wie bei den übrigen Topic Modelling Modellen befinden.
+<p align="center">
+  <img width="850" height="550" src="img/Similarity.png">
+</p>
+<p align="center">Similarity Scores des Topic Modelling Modells BERTopic (Eigene Darstellung)</p>
+<Br>
+
 
 ## Literatur
 
