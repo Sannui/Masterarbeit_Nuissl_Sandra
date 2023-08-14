@@ -117,7 +117,7 @@ Die Diagonale repräsentiert die Ähnlichkeit der Inhalte innerhalb eines Topics
 
 Auffällig bei der Analyse der Similarity ist, dass bei BERTopic die Diagonale immer eins ergibt, sich aber die übrigen Werte in einem vergleichbaren Bereich wie bei den übrigen Topic Modelling Modellen befinden.
 <p align="center">
-  <img width="850" height="550" src="img/Similarity.png">
+  <img width="500" height="500" src="https://github.com/Sannui/Masterarbeit_Nuissl_Sandra/blob/main/Topic%20Modelling/BERTopic/img/BERT_Similarity_between_Topic.png">
 </p>
 <p align="center">Similarity Scores des Topic Modelling Modells BERTopic (Eigene Darstellung)</p>
 <Br>
