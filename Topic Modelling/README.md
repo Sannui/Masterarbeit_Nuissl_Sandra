@@ -3,9 +3,9 @@
 In diesem Ordner des Github Repositorys sind die Notebooks der Implementierung und Evaluierung der fünf ausgewählten Topic Modelling Modelle. Da teilweise Probleme mit der Kompatibilität der verschiedenen Versionen von Libraries, welche für die einzelnen Modelle benötigt werden, aufgetreten sind, wurden diese in seperate Notebooks implementiert.
 
 <p align="center">
-  <img width="850" height="400" src="img/Topics_Words.png">
+  <img width="850" height="500" src="img/Topics_Words.png">
 </p>
-<p align="center">Berechnung der des Kohärenzscores (Eigene Abbildung in Anlehnung an (Röder, Both, & Hinneburg, 2015, S. 5))</p>
+<p align="center">Identifizierte Topics der Topic Modelling Modelle(Eigene Darstellung))</p>
 <Br>
 
 Für die Evaluierung wurden neben einem allgemeinen Vergleich der Vor- und Nachteile sowie einer qualitativen Untersuchung der Topics, drei Evaluierungsmetriken herangezogen:
@@ -47,9 +47,9 @@ coherence_model = CoherenceModel(topics     = topic_list,
 ## Perplexity
 ### Theory
 <p align="center">
-  <img width="850" height="250" src="img/Perplexity_Theory.png">
+  <img width="850" height="180" src="img/Perplexity_Theory.png">
 </p>
-<p align="center">...</p>
+<p align="center">Mathematische Herleitung der Perplexity (Hugging-Face, kein Datum)</p>
 <Br>
 
 ### Implementierung
@@ -70,7 +70,7 @@ perplexity = np.exp(log_perplexity)
 <p align="center">
   <img width="850" height="300" src="img/Similarity_Theory.png">
 </p>
-<p align="center">...</p>
+<p align="center">Mögliche Ergebnisse der Similarity (Eigene Darstellung in Anlehnung an (Supe, 2023))</p>
 <Br>
 
 ### Implementierung
@@ -83,7 +83,7 @@ similarity = cosine_similarity(doc_1, doc_2)
 <p align="center">
   <img width="850" height="550" src="img/Similarity.png">
 </p>
-<p align="center">...</p>
+<p align="center">: Similarity Scores der Topic Modelling Modelle LSA, LDA, Top2Vec und ZeroShotTM (Eigene Darstellung)</p>
 <Br>
 
 ## Literatur
