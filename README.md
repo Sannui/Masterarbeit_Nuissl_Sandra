@@ -5,6 +5,15 @@ von Sandra Nuißl - 14.08.2023
 <Br>
 <Br>
 
+## Inhalt
+Die Masterarbeit baut beinhaltet eine Reihe von Notebooks, welch in der schriftlichen Ausarbeitung beschrieben wurden. Die programatischen Inhalte können unter folgenden Links eingesehen werden:
+1. [Datenanalyse der Amazon Daten](Datenanalyse)
+2. [Datapreparation](Datapreperation)
+3. [Beschleunigung der Dataprepartarion mit PySpark](Beschleunigung%20mit%20PySpark)
+4. [Implementierung und Evaluierung der Topic Modelling Modelle](Topic%20Modelling)
+5. [Konzept einer optimierten Analyse von Produktreviews]()
+<Br>
+
 ## Themenstellung
 
 
