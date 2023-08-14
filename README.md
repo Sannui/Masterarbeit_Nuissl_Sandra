@@ -11,7 +11,7 @@ Die Masterarbeit baut beinhaltet eine Reihe von Notebooks, welch in der schriftl
 2. [Datapreparation](Datapreperation)
 3. [Beschleunigung der Dataprepartarion mit PySpark](Beschleunigung%20mit%20PySpark)
 4. [Implementierung und Evaluierung der Topic Modelling Modelle](Topic%20Modelling)
-5. [Konzept einer optimierten Analyse von Produktreviews]()
+5. [Konzept einer optimierten Analyse von Produktreviews](Konzept)
 <Br>
 
 ## Themenstellung
