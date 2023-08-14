@@ -44,7 +44,7 @@ coherence_model = CoherenceCV(texts=token_list, topics=topics)
 <Br>
 
 ### Ergebnisse
-
+Im Rahmen dieser Masterarbeit wurden die in der unten stehenden Abbildung gezeigten Kohärenzscores für die Modelle ermittelt. Je dunkter die Farbe, desto höher ist die Kohärenz. Die besten Werte haben BERTopic und Top2Vec erziehlt. Alle Werte lassen sich jedoch mit einem Hyperparamterttunig für die optimale Anzahl der Topics weiter erhöhen.
 <p align="center">
   <img width="850" height="450" src="img/Coherence.png">
 </p>
@@ -78,6 +78,15 @@ perplexity = np.exp(log_perplexity)
 <Br>
 
 ### Ergebnisse
+Zur Ermittlung der Perplexity wurden die Vektoren des Embeddings herangezogen. Die Ergebnisse sind jedoch nicht leicht interpretierbar, da es hierfür keine genauen Bewertungskriterien gibt. Allgemein gilt, je kleiner der Wert ausfällt, desto geringer ist die „Ratlosigkeit“ und desto weniger ist das Modell von neuen Datenpunkten „überrascht“. Jedoch ist nicht festgelegt, welche Werte als klein gelten und welche als zu groß. Für die im Rahmen der Masterarbeit verwendeten Topic Modelling Modelle ergaben sich folgende Perplexity:
+
+- LSA:				        0.00003
+- LDA:				     1989.95064
+- BERTopic:			      1.68226
+- Top2Vec:			      0.64394
+- ZeroShotTM:		      0.00035
+
+Werden die Ergebnisse der verwendeten Modelle zueinander in Relation gesetzt, fällt auf, dass LSA und ZeroShotTM am besten abgeschnitten haben. Daraus lässt sich Schlussfolgern, das die Fähigkeit der Verallgemeinerung und Vorhersage von Topics aus einem Korpus nicht von der Moderne des Ansatzes abhängig ist. Des Weiteren fällt auf, dass LDA mit weitem Abstand am schlechtesten abgeschnitten hat. Dies könnte daran liegen, dass der Datensatz zum Training des Modells mit 100 Tsd. Datenpunkten zu klein ist.
 
 
 <Br>
