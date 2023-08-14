@@ -1,9 +1,15 @@
 # Empirische Evaluation von "State Of The Art" Topic Modeling Ansätze am Beispiel von Produktreviews für die Entscheidungsunterstützung in Unternehmen
 
-<center><img src="https://www.cloudways.com/blog/wp-content/uploads/Product-Review-1024x576.jpg" height="300px" width="1100px"/></center>
-Masterarbeit von Sandra Nuißl - 14.08.2023
+<center><img src="img/Topic_Modelling.png" height="400px" width="1100px"/></center>
+von Sandra Nuißl - 14.08.2023
+<Br>
+<Br>
+
+## Themenstellung
 
 
+
+<Br>
 
 ## Hinweis zu den Notebooks
 ### Glitly
