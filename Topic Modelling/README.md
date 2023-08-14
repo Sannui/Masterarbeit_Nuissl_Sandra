@@ -29,6 +29,7 @@ Die Kohärenz bezieht sich auf die semitische Verbundenheit von Wörtern, welche
 ### Implementierung
 Zur Berechnung der Kohärenz wird für die Modelle LSA, LDA, Top2Vec und BERTopic die Klasse zur Kohärenberechnung von [Gensim](https://radimrehurek.com/gensim/models/coherencemodel.html) herangezogen. Da LDA ebenfalls über Gensim implementiert wurden kann an das Modell statt der Parameter "topics" und "texts" direkt das Modell ("model") übergeben werden. Für die übrigen Modelle müssen die Parameter teilweise aus den Daten extrahiert und in das passen de Format transformiert werden, um den Score zu errechnen.
 ```
+# Ermittlung der Kohärenz mithilfe von Gensim
 coherence_model = CoherenceModel(topics     = topic_list, 
                                  texts      = token_list, 
                                  corpus     = corpus,
@@ -37,6 +38,7 @@ coherence_model = CoherenceModel(topics     = topic_list,
 ```
 [ZeroShotTM](https://github.com/MilaNLProc/contextualized-topic-models/blob/master/contextualized_topic_models/evaluation/measures.py) bietet in der Dokumetation auf Github eine eigene Klasse, welche auf das Modell abgestimmt ist und ohne weiter Transformation der Daten implementiert werden kann.
 ```
+# Ermittlung der Kohärenz mithilfe der Klasse von ZeroShotTM
 coherence_model = CoherenceCV(texts=token_list, topics=topics)
 ```
 <Br>
@@ -53,7 +55,7 @@ coherence_model = CoherenceCV(texts=token_list, topics=topics)
 ## Perplexity
 
 ### Theory
-
+Perplexity bedeutet übersetzt so viel wie „Ratlosigkeit“ und bildet die durch die Anzahl der Wörter normalisierte inverse Wahrscheinlichkeit des Testsatzes ab (Campagnola, 2020). Es gibt Aufschluss darüber, wie gut ein Modell neue Daten verallgemeinern und vorhersagen kann, indem es den Abstand der Themenverteilung des Modells und der gleichmäßigen Wortverteilung des erstellten Wörterbuches misst (Rüdiger, Antons, Joshi, & Salge, 2022). 
 <p align="center">
   <img width="850" height="180" src="img/Perplexity_Theory.png">
 </p>
@@ -61,10 +63,17 @@ coherence_model = CoherenceCV(texts=token_list, topics=topics)
 <Br>
 
 ### Implementierung
+Die Perplexität definiert sich als die potenzierte durchschnittliche negative Log-Likelihood einer Sequenz (Hugging-Face, kein Datum), welche wie folgt programmatisch implementiert wurde:
 ```
+# Errecnung der Perplexity
 log_perplexity = -1 * np.mean(np.log(np.sum(probabilities, axis=1)))
 perplexity = np.exp(log_perplexity)
-
+```
+Für LDA bietet [Gensim](https://radimrehurek.com/gensim/models/ldamodel.html) zur Berechnung der Perplexity eine einfache Methode, welche die Wahrscheinlichkeiten pro Wort über eine Funktion errechnet und den Dokumentenkorpus als Bewertungsmaß heranzieht (Sphinx-Documentation, 2016). 
+```
+# Ermittlung der Perplexity mithilfe von Gensim
+log_perplexity = -1 * lda_model.log_perplexity(corpus)
+perplexity = np.exp(log_perplexity)
 ```
 <Br>
 
@@ -75,6 +84,7 @@ perplexity = np.exp(log_perplexity)
 
 ## Similarity
 ### Theory
+
 <p align="center">
   <img width="850" height="300" src="img/Similarity_Theory.png">
 </p>
@@ -91,7 +101,7 @@ similarity = cosine_similarity(doc_1, doc_2)
 <p align="center">
   <img width="850" height="550" src="img/Similarity.png">
 </p>
-<p align="center">: Similarity Scores der Topic Modelling Modelle LSA, LDA, Top2Vec und ZeroShotTM (Eigene Darstellung)</p>
+<p align="center">Similarity Scores der Topic Modelling Modelle LSA, LDA, Top2Vec und ZeroShotTM (Eigene Darstellung)</p>
 <Br>
 
 ## Literatur
